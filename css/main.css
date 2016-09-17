@@ -1,0 +1,32 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.title-text {
+	font-family: "Indie Flower", cursive;
+	color: #2390db;
+	font-size: 60px;
+}
+
+.title-sub {
+	font-family: 'Lato', sans-serif;
+	color: #7d97ad;
+}
+
+.section {
+	color: #02b3e4;
+	margin-left: 20px;
+}
+
+.project-headings, 
+.project-content {
+	text-align: center;
+}
+
+.copyright {
+	margin: 40px;
+	color: #5e666e;
+}
