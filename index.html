@@ -1,74 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-	   <meta charset="utf-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-	   <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-	   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-       <link rel="stylesheet" href="css/bootstrap.min.css">
-	   <link rel="stylesheet" href="css/main.css">
-	   <title>My Portfolio</title>
+	  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/fontawesome.js"></script>
+	  <title>Manu Bhargav | JavaScript Developer</title>
   </head>
   <body>
-    <div class="container">
-    <header class="row">
-      <div class="col-md-6 title-logo">
-      <picture>
-      		<source media="(max-width: 400px)" srcset="./img/logo-small.png">
-      		<source media="(max-width: 700px)" srcset="./img/logo-large.png">
-      		<img src="./img/logo.png" alt="Company Logo">
-      </div>
-      <div class="col-md-6  text-right text-uppercase">
-        <h1 class="title-text">Manu Bhargav</h1>
-        <h4 class="title-sub">By Day  - Penetration Tester <br> By Night - You guessed it right</h4>
-      </div>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-expand-md navbar-dark">
+            <div class="fill-navbar-brand"><a class="navbar-brand" href="index.html">MB</a></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse dual-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item about-nav-item">
+                    <a class="nav-link  mx-3" href="about.html">ABOUT</a>
+                  </li>
+                  <li class="nav-item work-nav-item">
+                    <a class="nav-link  mx-3" href="work.html">WORK</a>
+                  </li>
+                  <li class="nav-item contact-nav-item">
+                    <a class="nav-link  mx-3" href="contact.html">CONTACT</a>
+                  </li>
+                  
+                </ul>
+              </div>
+          </nav>
     </header>
-    <div class="row">
-      <div class="col-md-12">
-      	<picture>
-      		<source media="(max-width: 400px)" srcset="./img/main-small.jpg" class="img-responsive" >
-      		<source media="(max-width: 700px)" srcset="./img/main-large.jpg" class="img-responsive" >
-      		<img src="./img/main.jpg" class="img-responsive" alt="I am a rensponsible person. For instance, you can see that I use Alt tags for images">
-      	</picture>
+    <main>
+      <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+          <form class="col-12">
+            <div class="main-heading">
+              I am Manu bhargav
+            </div>
+            <div class="sub-heading">
+              I try making the web an awesome place.
+            </div>
+          </form>   
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <h2 class="section">Featured Work</h2>
-    </div>
-    <article class="row text-centered">
-      <div class="col-md-4">
-      	<picture>
-      		<source media="(max-width: 400px)" srcset="./img/project1-small.jpg" class="img-responsive" >
-      		<source media="(max-width: 700px)" srcset="./img/project1-large.jpg" class="img-responsive" >
-        	<img src="./img/project1.jpg" alt="My Project on Road Traffic Monitoring"  class="img-responsive">
-        </picture>
-        <h3 class="project-headings">Lollipop Men App</h3>
-        <p class="project-content">http://github.com/manubhargav/iot_app/</p>
+      <!-- <div><a href="resume.pdf" target="_blank">Download Resume</a></div> -->
+    </main>
+    <footer>
+      <div class="footer-links text-center">
+        <a href="https://github.com/Manubhargav/" target="_blank"><i class="fa fa-2x fa-github mx-4" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/manubhargav/" target="_blank"><i class="fa fa-2x fa-linkedin mx-4" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/manubhargav27" target="_blank"><i class="fa fa-2x fa-twitter mx-4" aria-hidden="true"></i></a>
+        <a href="https://medium.com/@manubhargav" target="_blank"><i class="fa fa-2x fa-medium mx-4" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/manubhargav/" target="_blank"><i class="fa fa-2x fa-instagram mx-4" aria-hidden="true"></i></a>
       </div>
-      <div class="col-md-4">
-      <picture>
-      		<source media="(max-width: 400px)" srcset="./img/project2-small.jpg" class="img-responsive" >
-      		<source media="(max-width: 700px)" srcset="./img/project2-large.jpg" class="img-responsive" >
-        	<img src="./img/project2.jpg" alt="My Attempt at Hosting and building a Website"  class="img-responsive">
-        </picture>
-        <h3 class="project-headings">Rigtechnlogies.in</h3>
-        <p class="project-content">http://rigtechnlogies.in/</p>
-      </div>
-      <div  class="col-md-4">
-      <picture>
-      		<source media="(max-width: 400px)" srcset="./img/project3-small.jpg" class="img-responsive" >
-      		<source media="(max-width: 700px)" srcset="./img/project3-large.jpg" class="img-responsive" >
-        	<img src="./img/project3.jpg" alt="I'm Pasionate about Photography"  class="img-responsive">
-        </picture>
-        <h3 class="project-headings">Photography</h3>
-        <p class="project-content">http://instagram.com/manubhargav/</p>
-      </div>
-    </article>
-    </div>
-    <footer class="copyright">
-    	site design <a href="http://android.stackexchange.com/users/119358/manubhargav?tab=profile">Manubhargav</a> /  logo © Srikar Suresh
- 	</footer>
- 	<script src="js/jquery-3.1.0.min.js"></script>
- 	<script src="js/bootstrap.min.js"></script>
+    </footer>
   </body>
 </html>

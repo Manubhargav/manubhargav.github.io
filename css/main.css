@@ -1,32 +1,92 @@
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
+    background-color: #111 !important;
+    color: white;
 }
 
-.title-text {
-	font-family: "Indie Flower", cursive;
-	color: #2390db;
-	font-size: 60px;
+header {
+    margin-bottom: 60px;
+    font-size: 25px;
 }
 
-.title-sub {
-	font-family: 'Lato', sans-serif;
-	color: #7d97ad;
+.navbar {
+    padding: 0px;
+    font-weight: 500;
 }
 
-.section {
-	color: #02b3e4;
-	margin-left: 20px;
+.navbar-brand {
+    font-size: 25px;
 }
 
-.project-headings, 
-.project-content {
-	text-align: center;
+main {
+    height: 80vh;
 }
 
-.copyright {
-	margin: 40px;
-	color: #5e666e;
+.fill-navbar-brand {
+    margin: 0px;
+}
+
+.fill-navbar-brand a {
+    margin: 0px;
+    padding: 8px;
+}
+
+.fill-red a {
+    background-color: #e74c3c !important;
+}
+
+.fill-blue a {
+    background-color: #2980b9 !important;
+}
+
+.fill-green a {
+    background-color: #16a085 !important;
+}
+
+.main-contact-heading {
+    font-size:38px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.sub-contact-heading {
+    font-size:24px;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.contact-container-content {
+    margin-bottom: 70px;
+}
+
+.contact-details {
+    padding: 0px 20px;
+    color: #2980b9;
+}
+
+.paint-red {
+    color: #e74c3c;
+}
+
+.paint-green {
+    color:#16a085;
+}
+
+.paint-blue {
+    color:#2980b9;
+}
+
+.about-nav-item:hover {
+    border-bottom: 4px solid #16a085;
+}
+
+.work-nav-item:hover {
+    border-bottom: 4px solid #e74c3c;
+}
+
+.contact-nav-item:hover {
+    border-bottom: 4px solid #2980b9;
+}
+
+.about-container, .work-container, .contact-container {
+    padding-top: 100px;
 }
