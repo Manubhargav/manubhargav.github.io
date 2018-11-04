@@ -3,30 +3,60 @@
   <head>
 	  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="shortcut icon" href="img/logo.jpg">
+    <script src="js/fontawesome.js"></script>
 	  <title>Manu Bhargav | JavaScript Developer</title>
   </head>
   <body>
-    <header id="home-top" class="nav-top nav-fixed headroom headroom--pinned nav-root headroom--top">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-xs-4">
-            <h1 id="header-logo" class="image-text"><a href="/"><i class=""></i></a></h1>
-          </div>
-          <div class="col-md-8 col-xs-8">
-            <nav id="top-nav">
-              <ul class="nav-list">
-                <li><a class="active" href="http://manubhargav.github.io/">About</a></li>
-                <li><a href="http://manubhargav.github.io/resume.pdf">Resume Download</a></li>
-              </ul>
-            </nav>
-          </div> <!-- 12 -->
-        </div> <!-- / row -->
-      </div> <!--/ container -->
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-expand-md navbar-dark">
+            <div class="fill-navbar-brand"><a class="navbar-brand" href="index.html">MB</a></div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse dual-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item about-nav-item">
+                    <a class="nav-link  mx-3" href="about.html">ABOUT</a>
+                  </li>
+                  <li class="nav-item work-nav-item">
+                    <a class="nav-link  mx-3" href="work.html">WORK</a>
+                  </li>
+                  <li class="nav-item contact-nav-item">
+                    <a class="nav-link  mx-3" href="contact.html">CONTACT</a>
+                  </li>
+                  
+                </ul>
+              </div>
+          </nav>
     </header>
-    <script src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <main>
+      <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+          <form class="col-12">
+            <div class="main-heading">
+              I am Manu bhargav
+            </div>
+            <div class="sub-heading">
+              I try making the web an awesome place.
+            </div>
+          </form>   
+        </div>
+      </div>
+      <!-- <div><a href="resume.pdf" target="_blank">Download Resume</a></div> -->
+    </main>
+    <footer>
+      <div class="footer-links text-center">
+        <a href="https://github.com/Manubhargav/" target="_blank"><i class="fa fa-2x fa-github mx-4" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/manubhargav/" target="_blank"><i class="fa fa-2x fa-linkedin mx-4" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/manubhargav27" target="_blank"><i class="fa fa-2x fa-twitter mx-4" aria-hidden="true"></i></a>
+        <a href="https://medium.com/@manubhargav" target="_blank"><i class="fa fa-2x fa-medium mx-4" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/manubhargav/" target="_blank"><i class="fa fa-2x fa-instagram mx-4" aria-hidden="true"></i></a>
+      </div>
+    </footer>
   </body>
 </html>
