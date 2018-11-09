@@ -1,6 +1,11 @@
-* {
+.page-container {
     background-color: #111 !important;
     color: white;
+}
+
+.index-body-container {
+    background: url('../img/IMG_5437.JPG');
+    background-size:cover;
 }
 
 header {
@@ -48,7 +53,7 @@ main {
     padding-bottom: 20px;
 }
 
-.sub-contact-heading {
+.sub-contact-heading, .about-content, .work-sub-heading {
     font-size:24px;
     text-align: left;
     padding-bottom: 20px;
@@ -89,4 +94,30 @@ main {
 
 .about-container, .work-container, .contact-container {
     padding-top: 100px;
+}
+
+.about-resume {
+    float:right;
+}
+
+.footer-links a {
+    color:white;
+}
+
+.main-heading {
+    font-size: 30px;
+    color:white;
+}
+
+.sub-heading {
+    font-size: 24px;
+    color:white;
+}
+
+.fill-black, .fill-black a {
+    color:black !important;
+}
+
+.fill-black.footer-links {
+    margin-left: 100px;
 }
