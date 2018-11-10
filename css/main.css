@@ -47,13 +47,13 @@ main {
     background-color: #16a085 !important;
 }
 
-.main-contact-heading {
+.main-contact-heading, .project-heading-link {
     font-size:38px;
     text-align: center;
     padding-bottom: 20px;
 }
 
-.sub-contact-heading, .about-content, .work-sub-heading {
+.sub-contact-heading, .about-content, .work-sub-heading, .project-content {
     font-size:24px;
     text-align: left;
     padding-bottom: 20px;
@@ -68,15 +68,15 @@ main {
     color: #2980b9;
 }
 
-.paint-red {
+.paint-red, .paint-red:hover {
     color: #e74c3c;
 }
 
-.paint-green {
+.paint-green, .paint-green:hover {
     color:#16a085;
 }
 
-.paint-blue {
+.paint-blue, .paint-blue:hover {
     color:#2980b9;
 }
 
