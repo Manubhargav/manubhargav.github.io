@@ -123,3 +123,10 @@ main {
 .fill-black.footer-links {
     margin-left: 10%;
 }
+
+@media screen and (max-width:530px) {
+    .fill-black.footer-links {
+        margin-left: 0%;
+        padding-bottom: 30px;
+    }
+}
