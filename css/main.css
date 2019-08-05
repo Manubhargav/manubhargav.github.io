@@ -6,6 +6,8 @@
 .index-body-container {
     background: url('../img/IMG_5437.JPG');
     background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 header {
@@ -119,5 +121,5 @@ main {
 }
 
 .fill-black.footer-links {
-    margin-left: 100px;
+    margin-left: 10%;
 }
