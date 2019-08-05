@@ -146,4 +146,7 @@ main {
     .contact-details {
         display: block;
     }
+    form.col-12 {
+        margin-top: -300px;
+    }
 }
