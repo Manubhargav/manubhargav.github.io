@@ -133,3 +133,10 @@ main {
         font-size: 1.4em !important;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .col-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
