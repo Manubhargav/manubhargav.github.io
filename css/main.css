@@ -129,4 +129,7 @@ main {
         margin-left: 0%;
         padding-bottom: 30px;
     }
+    .fa-2x {
+        font-size: 1.4em;
+    }
 }
