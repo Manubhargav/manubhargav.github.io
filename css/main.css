@@ -124,6 +124,10 @@ main {
     margin-left: 10%;
 }
 
+.navbar-nav {
+    text-align: right!important;
+}
+
 @media screen and (max-width:530px) {
     .fill-black.footer-links {
         margin-left: 0%;
