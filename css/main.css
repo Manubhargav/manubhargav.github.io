@@ -5,7 +5,7 @@
 
 .paint-background-with-image {
     background: url('../img/IMG_5437.JPG');
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -25,7 +25,7 @@ header {
 }
 
 main {
-    height: 80vh;
+    height: 87vh;
 }
 
 .fill-navbar-brand {
@@ -50,7 +50,7 @@ main {
 }
 
 .main-contact-heading, .project-heading-link {
-    font-size:38px;
+    font-size: 38px;
     text-align: center;
     padding-bottom: 20px;
 }
@@ -60,7 +60,7 @@ main {
 }
 
 .sub-contact-heading, .about-content, .work-sub-heading, .project-content {
-    font-size:24px;
+    font-size: 24px;
     text-align: left;
     padding-bottom: 20px;
 }
@@ -79,11 +79,11 @@ main {
 }
 
 .paint-green, .paint-green:hover {
-    color:#16a085;
+    color: #16a085;
 }
 
 .paint-blue, .paint-blue:hover {
-    color:#2980b9;
+    color: #2980b9;
 }
 
 .about-nav-item:hover {
@@ -103,11 +103,11 @@ main {
 }
 
 .about-resume {
-    float:right;
+    float: right;
 }
 
 .footer-links a {
-    color:white;
+    color: white;
 }
 
 .main-heading {
@@ -118,11 +118,11 @@ main {
 
 .sub-heading {
     font-size: 24px;
-    color:white;
+    color: white;
 }
 
 .fill-black, .fill-black a {
-    color:black !important;
+    color: black !important;
 }
 
 .fill-black.footer-links {
@@ -130,7 +130,7 @@ main {
 }
 
 .navbar-nav {
-    text-align: right!important;
+    text-align: right !important;
 }
 
 @media screen and (max-width:530px) {
@@ -138,6 +138,7 @@ main {
         margin-left: 0%;
         padding-bottom: 30px;
     }
+
     .fa-2x {
         font-size: 1.4em !important;
     }
@@ -148,9 +149,11 @@ main {
         flex: 0 0 100%;
         max-width: 100%;
     }
+
     .contact-details {
         display: block;
     }
+
     form.col-12 {
         margin-top: -300px;
     }
