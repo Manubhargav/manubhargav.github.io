@@ -1,9 +1,9 @@
-.page-container {
+.paint-background-black {
     background-color: #111 !important;
     color: white;
 }
 
-.index-body-container {
+.paint-background-with-image {
     background: url('../img/IMG_5437.JPG');
     background-size:cover;
     background-repeat: no-repeat;
@@ -53,6 +53,10 @@ main {
     font-size:38px;
     text-align: center;
     padding-bottom: 20px;
+}
+
+.intro-container {
+    text-align: center;
 }
 
 .sub-contact-heading, .about-content, .work-sub-heading, .project-content {
@@ -108,7 +112,8 @@ main {
 
 .main-heading {
     font-size: 30px;
-    color:white;
+    text-transform: capitalize;
+    /* color:white; */
 }
 
 .sub-heading {
