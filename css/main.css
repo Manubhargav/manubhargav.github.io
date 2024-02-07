@@ -30,6 +30,15 @@ main {
 
 .fill-navbar-brand {
     margin: 0px;
+    padding-left: 0.5rem;
+}
+
+.navbar-circle {
+    min-width: 17px;
+    min-height: 17px;
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
 }
 
 .fill-navbar-brand a {
@@ -38,14 +47,26 @@ main {
 }
 
 .fill-red a {
-    background-color: #e74c3c !important;
+    color: #e74c3c !important;
 }
 
 .fill-blue a {
-    background-color: #2980b9 !important;
+    color: #2980b9 !important;
 }
 
 .fill-green a {
+    color: #16a085 !important;
+}
+
+.fill-red div {
+    background-color: #e74c3c !important;
+}
+
+.fill-blue div {
+    background-color: #2980b9 !important;
+}
+
+.fill-green div {
     background-color: #16a085 !important;
 }
 
@@ -113,12 +134,19 @@ main {
 .main-heading {
     font-size: 30px;
     text-transform: capitalize;
+    font-weight: bold;
     /* color:white; */
 }
 
 .sub-heading {
     font-size: 24px;
     color: white;
+}
+
+.potrait-image {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 50%;
 }
 
 .fill-black, .fill-black a {
@@ -133,10 +161,19 @@ main {
     text-align: right !important;
 }
 
+/* 
+.text-align-justify {
+    text-align: justify;
+} */
+
 @media screen and (max-width:530px) {
     .fill-black.footer-links {
         margin-left: 0%;
         padding-bottom: 30px;
+    }
+
+    .text-justify {
+        text-align: left !important;
     }
 
     .fa-2x {
