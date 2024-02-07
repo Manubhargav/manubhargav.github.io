@@ -28,9 +28,13 @@ main {
     height: 87vh;
 }
 
+.navbar-toggler {
+    margin-right: 1rem;
+}
+
 .fill-navbar-brand {
     margin: 0px;
-    padding-left: 0.5rem;
+    padding-left: 1rem;
 }
 
 .navbar-circle {
@@ -86,6 +90,10 @@ main {
     padding-bottom: 20px;
 }
 
+.sub-contact-heading {
+    text-align: center;
+}
+
 .contact-container-content {
     margin-bottom: 70px;
 }
@@ -93,6 +101,7 @@ main {
 .contact-details {
     padding: 0px 20px;
     color: #2980b9;
+    font-size: 24px;
 }
 
 .paint-red, .paint-red:hover {
