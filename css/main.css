@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .paint-background-black {
     background-color: #111 !important;
     color: white;
@@ -116,6 +120,11 @@ main {
     color: #2980b9;
 }
 
+.nav-link {
+    margin: 10px;
+    color: white !important;
+}
+
 .about-nav-item:hover {
     border-bottom: 4px solid #16a085;
 }
@@ -170,10 +179,17 @@ main {
     text-align: right !important;
 }
 
-/* 
+hr {
+    border: 0;
+    border-top: 5px solid white;
+    margin-top: 1rem;
+}
+
+/*
 .text-align-justify {
     text-align: justify;
-} */
+}
+*/
 
 @media screen and (max-width:530px) {
     .fill-black.footer-links {

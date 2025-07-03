@@ -17,19 +17,20 @@
 
 <body class="paint-background-black">
   <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-expand-md navbar-dark paint-background-black">
-      <div class="fill-navbar-brand">
-        <div class="navbar-circle"></div><a class="navbar-brand" href="index.html"> Manu Srirangarajan</a>
-      </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse dual-collapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item about-nav-item"><a class="nav-link mx-3" href="about.html">ABOUT</a></li>
-          <li class="nav-item work-nav-item"><a class="nav-link mx-3" href="work.html">WORK</a></li>
-          <li class="nav-item contact-nav-item"><a class="nav-link mx-3" href="contact.html">CONTACT</a></li>
+    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-dark paint-background-black"
+      style="height: 100vh; position: fixed; top: 0; left: 0; width: 50px; padding: 0; margin: 0;">
+
+      <!-- <div class="fill-navbar-brand" style="margin: 0; padding: 0; text-align: center;">
+        <div class="navbar-circle" style="margin-top: 10px;"></div>
+        <a class="navbar-brand" href="index.html">Manu Srirangarajan</a>
+      </div> -->
+
+      <div class="collapse navbar-collapse" style="margin-top: 20px;">
+        <ul class="navbar-nav" style="flex-direction: column; align-items: center;">
+          <li class="nav-item about-nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+          <li class="nav-item work-nav-item"><a class="nav-link" href="#work">WORK</a></li>
+          <li class="nav-item contact-nav-item"><a class="nav-link" href="#contact">CONTACT</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -48,19 +49,134 @@
         </div>
       </div>
     </div>
+    <div id="about" class="container about-container" style="padding-top: 100px; color: white;">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="main-contact-heading paint-green">Who am I?</div>
+          <div class="about-content text-justify">
+            <p>Hello! I'm Manu. <span class="about-resume"><a href="/assets/Manu_SWE_H1_2024.pdf" target="_blank"
+                  class="paint-green">View Resume ↗</a></span>
+            </p><br />
+
+            <p>I am passionate Front End Engineer at Amazon with a strong background in React, Angular,
+              and TypeScript. As a Front End Engineer at Amazon, I specialize in designing and implementing responsive,
+              user-friendly
+              interfaces using React, Angular, and TypeScript. I have a strong background in consuming REST APIs
+              developed with Python and have a deep understanding of modern web technologies.</p><br />
+
+            <p>I earned my Master's in Computer Science from San Diego State University. I have also completed the
+              <a href="https://www.udacity.com/certificate/e/8efa0868-b5ee-11e7-b76c-d383aeec7474" target="_blank"
+                class="paint-green"> Front-End Web
+                Developer Nanodegree ↗</a> by Udacity. Its a fancy way of saying that I really know how technology,
+              software and the web should work together.
+            </p><br />
+
+            <p>When not coding, you can find me exploring the latest web development trends on <a
+                href="https://devrant.com/" target="_blank" class="paint-green">devRant ↗</a>, reading
+              insightful articles on Medium, or enjoying a good binge-watch of Silicon Valley and Top Gear. I find
+              inspiration in a hot cup of Lemon tea, the music of Pink Floyd, and of course, the endless knowledge on
+              <a href="https://stackexchange.com/users/6721461/manubhargav" target="_blank" class="paint-green">Stack
+                Overflow ↗</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <hr>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </div>
+    <div id="work" class="container work-container" style="padding-top: 100px; color: white;">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="main-contact-heading paint-red">Checkout my Projects</div>
+          <p class="work-sub-heading">
+            Throughout my career, I've had the privilege of collaborating on a myriad of projects with a diverse range
+            of clients. While I would love to showcase some of my best work here, a significant portion of my portfolio
+            is bound by non-disclosure agreements to safeguard the intellectual property of my clients. <br /><br />
+            Here are some projects I have developed
+          </p>
+          <div class="projects-list-container">
+            <div class="project-container">
+              <a href="https://manubhargav.github.io/Whack-a-mole/" target="_blank"
+                class="paint-red project-heading-link">Whack-a-mole ↗</a>
+              <p class="project-content">Whack-A-mole game in vanilla Javascript <br />
+                <em>Built with:</em> JavaScript, HTML5, CSS33
+              </p>
+            </div>
+            <div class="project-container">
+              <a href="https://manubhargav.github.io/GuestHouse/" target="_blank"
+                class="paint-red project-heading-link">The Guest House ↗</a>
+              <p class="project-content">Airbnb-like portal where users can book rooms and have a look at their
+                bookings<br />
+                <em>Built with:</em> AngularJS, APIs. <em>Deployed on:</em> GitHub Pages with GitHub Actions
+              </p>
+            </div>
+            <div class="project-container">
+              <a href="https://manubhargav.github.io/NammaMetroMap/" target="_blank"
+                class="paint-red project-heading-link">Namma Metro Map ↗</a>
+              <p class="project-content">Progressive web app that shows Metro Rapid Transit in Bengaluru<br />
+                <em>Built with:</em> Javascript, KnockoutJS, Google Maps API, Wikipedia API .<br />
+                <em>Deployed on:</em> GitHub Pages with GitHub Actions
+              </p>
+            </div>
+            <div class="project-container">
+              <a href="https://secret-coast-79189.herokuapp.com/" target="_blank"
+                class="paint-red project-heading-link">Galeria ↗</a>
+              <p class="project-content">Gallery app where users can showcase their art <br />
+                <em>Built with:</em> Ruby, Sinatra, PostgreSQL.<br />
+                <em>Deployed on:</em> Heroku, AWS S3
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <hr>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    </div>
+    <div id="contact" class="container h-100 contact-container" style="padding-top: 100px; color: white;">
+      <div class="row h-100 justify-content-center">
+        <div class="col-8 col-offset-4 contact-container-content">
+          <div class="main-contact-heading paint-blue">Let's Chat</div>
+          <div class="sub-contact-heading">
+            If you would like to get in touch, please shoot me an email. I will try to get back to you within a
+            day or two!
+          </div> <br />
+          <div class="text-center">
+            <span class="contact-details"><a class="paint-blue"
+                href="mailto:manubhargav27@gmail.com?subject=Hey there!">Send an Email ↗</a></span>
+            <span class="contact-details"><a class="paint-blue" href="sms:+16194528256?&body=Hi there!">Click here to
+                text me! ↗</a></span>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </main>
-  <footer class="container">
-    <div class="footer-links row h-100 justify-content-center align-items-center">
+  <footer style="color: white; text-align: center; padding: 20px 0;">
+    <div class="footer-links">
       <a href="https://github.com/Manubhargav/" target="_blank"><i class="fa fa-2x fa-github mx-4"
           aria-hidden="true"></i></a>
       <a href="https://www.linkedin.com/in/manubhargav/" target="_blank"><i class="fa fa-2x fa-linkedin mx-4"
           aria-hidden="true"></i></a>
       <a href="https://www.instagram.com/manubhargav/" target="_blank"><i class="fa fa-2x fa-instagram mx-4"
           aria-hidden="true"></i></a>
-      <!-- <a href="https://twitter.com/manubhargav27" target="_blank"><i class="fa fa-2x fa-twitter mx-4"
-          aria-hidden="true"></i></a> -->
-      <!-- <a href="https://medium.com/@manubhargav" target="_blank"><i class="fa fa-2x fa-medium mx-4"
-          aria-hidden="true"></i></a> -->
+      <a href="https://twitter.com/manubhargav27" target="_blank"><i class="fa fa-2x fa-twitter mx-4"
+          aria-hidden="true"></i></a>
+      <a href="https://medium.com/@manubhargav" target="_blank"><i class="fa fa-2x fa-medium mx-4"
+          aria-hidden="true"></i></a>
     </div>
   </footer>
 </body>
