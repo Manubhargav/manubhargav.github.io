@@ -17,26 +17,25 @@
 
 <body class="paint-background-black">
   <header>
-    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-dark paint-background-black"
-      style="height: 100vh; position: fixed; top: 0; left: 0; width: 50px; padding: 0; margin: 0;">
-
-      <!-- <div class="fill-navbar-brand" style="margin: 0; padding: 0; text-align: center;">
-        <div class="navbar-circle" style="margin-top: 10px;"></div>
-        <a class="navbar-brand" href="index.html">Manu Srirangarajan</a>
-      </div> -->
-
-      <div class="collapse navbar-collapse" style="margin-top: 20px;">
-        <ul class="navbar-nav" style="flex-direction: column; align-items: center;">
-          <li class="nav-item about-nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
-          <li class="nav-item work-nav-item"><a class="nav-link" href="#work">WORK</a></li>
-          <li class="nav-item contact-nav-item"><a class="nav-link" href="#contact">CONTACT</a>
-          </li>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-expand-md navbar-dark paint-background-black">
+      <div class="fill-navbar-brand header-link">
+        <div class="navbar-circle"></div><a href="#intro">Manu Srirangarajan</>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse dual-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active about-nav-item fill-green"><a class="nav-link mx-3" href="#about">ABOUT</a></li>
+          <li class="nav-item work-nav-item fill-red"><a class="nav-link mx-3" href="#work">WORK</a></li>
+          <li class="nav-item contact-nav-item fill-blue"><a class="nav-link mx-3" href="#contact">CONTACT</a></li>
         </ul>
       </div>
     </nav>
   </header>
   <main>
-    <div class="container h-100 intro-container">
+    <div id="intro" class="container h-100 intro-container">
       <div class="row h-100 justify-content-center align-items-center">
         <div class="col-md"><img src="img/Manu_Potrait.jpg" class="potrait-image"></div>
         <div class="col-md">
@@ -49,7 +48,8 @@
         </div>
       </div>
     </div>
-    <div id="about" class="container about-container" style="padding-top: 100px; color: white;">
+    </div>
+    <div id="about" class="container about-container">
       <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
@@ -60,8 +60,7 @@
             </p><br />
 
             <p>I am passionate Front End Engineer at Amazon with a strong background in React, Angular,
-              and TypeScript. As a Front End Engineer at Amazon, I specialize in designing and implementing responsive,
-              user-friendly
+              and TypeScript. I specialize in designing and implementing responsive, user-friendly
               interfaces using React, Angular, and TypeScript. I have a strong background in consuming REST APIs
               developed with Python and have a deep understanding of modern web technologies.</p><br />
 
@@ -91,7 +90,7 @@
         <div class="col-1"></div>
       </div>
     </div>
-    <div id="work" class="container work-container" style="padding-top: 100px; color: white;">
+    <div id="work" class="container work-container">
       <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
@@ -146,8 +145,8 @@
         <div class="col-1"></div>
       </div>
     </div>
-    <div id="contact" class="container h-100 contact-container" style="padding-top: 100px; color: white;">
-      <div class="row h-100 justify-content-center">
+    <div id="contact" class="container h-100 contact-container">
+      <div class="row h-75 justify-content-center">
         <div class="col-8 col-offset-4 contact-container-content">
           <div class="main-contact-heading paint-blue">Let's Chat</div>
           <div class="sub-contact-heading">
@@ -163,22 +162,23 @@
           </form>
         </div>
       </div>
+      <footer style="text-align: center; padding: 20px 0;">
+        <div class="footer-links">
+          <a href="https://github.com/Manubhargav/" target="_blank"><i class="fa fa-2x fa-github mx-4"
+              aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/manubhargav/" target="_blank"><i class="fa fa-2x fa-linkedin mx-4"
+              aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/manubhargav/" target="_blank"><i class="fa fa-2x fa-instagram mx-4"
+              aria-hidden="true"></i></a>
+          <a href="https://twitter.com/manubhargav27" target="_blank"><i class="fa fa-2x fa-twitter mx-4"
+              aria-hidden="true"></i></a>
+          <a href="https://medium.com/@manubhargav" target="_blank"><i class="fa fa-2x fa-medium mx-4"
+              aria-hidden="true"></i></a>
+        </div>
+      </footer>
     </div>
   </main>
-  <footer style="color: white; text-align: center; padding: 20px 0;">
-    <div class="footer-links">
-      <a href="https://github.com/Manubhargav/" target="_blank"><i class="fa fa-2x fa-github mx-4"
-          aria-hidden="true"></i></a>
-      <a href="https://www.linkedin.com/in/manubhargav/" target="_blank"><i class="fa fa-2x fa-linkedin mx-4"
-          aria-hidden="true"></i></a>
-      <a href="https://www.instagram.com/manubhargav/" target="_blank"><i class="fa fa-2x fa-instagram mx-4"
-          aria-hidden="true"></i></a>
-      <a href="https://twitter.com/manubhargav27" target="_blank"><i class="fa fa-2x fa-twitter mx-4"
-          aria-hidden="true"></i></a>
-      <a href="https://medium.com/@manubhargav" target="_blank"><i class="fa fa-2x fa-medium mx-4"
-          aria-hidden="true"></i></a>
-    </div>
-  </footer>
+
 </body>
 
 </html>
