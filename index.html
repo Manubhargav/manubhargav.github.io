@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="dark">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="description"
+    content="Manu Bhargav Srirangarajan — Fullstack Developer. Personal portfolio showcasing projects, skills, and experience.">
+
   <script src="js/jquery-3.3.1.slim.min.js"></script>
   <script src="js/popper.min.js"></script>
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -15,11 +18,40 @@
   <title>Manu Bhargav | Fullstack Developer</title>
 </head>
 
-<body class="paint-background-black">
+<body>
   <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-expand-md navbar-dark paint-background-black">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-expand-md navbar-dark">
       <div class="fill-navbar-brand header-link">
-        <div class="navbar-circle"></div><a href="#intro">Manu Srirangarajan</>
+        <div class="navbar-circle"></div>
+        <a href="#intro" class="brand">
+          <span class="full-name">Manu Srirangarajan</span>
+        </a>
+      </div>
+      <div class="theme-switcher" role="radiogroup" aria-label="Theme">
+        <button type="button" role="radio" aria-checked="false" aria-label="Light mode" title="Light mode"
+          class="theme-option" data-theme-value="light">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
+        <button type="button" role="radio" aria-checked="true" aria-label="Dark mode" title="Dark mode"
+          class="theme-option active" data-theme-value="dark">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path
+              d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401">
+            </path>
+          </svg>
+        </button>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,9 +59,12 @@
       </button>
       <div class="collapse navbar-collapse dual-collapse">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active about-nav-item fill-green"><a class="nav-link mx-3" href="#about">ABOUT</a></li>
-          <li class="nav-item work-nav-item fill-red"><a class="nav-link mx-3" href="#work">WORK</a></li>
-          <li class="nav-item contact-nav-item fill-blue"><a class="nav-link mx-3" href="#contact">CONTACT</a></li>
+          <li class="nav-item about-nav-item fill-green"><a class="nav-link mx-3" href="#about"><span
+                class="rotate-text" data-text="ABOUT"><span class="rotate-inner">ABOUT</span></span></a></li>
+          <li class="nav-item work-nav-item fill-red"><a class="nav-link mx-3" href="#work"><span class="rotate-text"
+                data-text="WORK"><span class="rotate-inner">WORK</span></span></a></li>
+          <li class="nav-item contact-nav-item fill-blue"><a class="nav-link mx-3" href="#contact"><span
+                class="rotate-text" data-text="CONTACT"><span class="rotate-inner">CONTACT</span></span></a></li>
         </ul>
       </div>
     </nav>
@@ -37,7 +72,7 @@
   <main>
     <div id="intro" class="container h-100 intro-container">
       <div class="row h-100 justify-content-center align-items-center">
-        <div class="col-md"><img src="img/Manu_Potrait.jpg" class="potrait-image"></div>
+        <div class="col-md"><img src="img/Manu_Potrait.jpg" class="potrait-image" alt="Manu Bhargav portrait"></div>
         <div class="col-md">
           <div class="main-heading">
             Manu Bhargav Srirangarajan
@@ -48,7 +83,6 @@
         </div>
       </div>
     </div>
-    </div>
     <div id="about" class="container about-container">
       <div class="row">
         <div class="col-1"></div>
@@ -56,7 +90,8 @@
           <div class="main-contact-heading paint-green">Who am I?</div>
           <div class="about-content text-justify">
             <p>Hello! I'm Manu. <span class="about-resume"><a href="/assets/resume.pdf" target="_blank"
-                  class="paint-green">View Resume ↗</a></span>
+                  class="paint-green"><span class="rotate-text" data-text="View Resume ↗"><span
+                      class="rotate-inner">View Resume ↗</span></span></a></span>
             </p><br />
 
             <p>I am passionate Front End Engineer at Amazon with a strong background in React, Angular,
@@ -66,17 +101,20 @@
 
             <p>I earned my Master's in Computer Science from San Diego State University. I have also completed the
               <a href="https://www.udacity.com/certificate/e/8efa0868-b5ee-11e7-b76c-d383aeec7474" target="_blank"
-                class="paint-green"> Front-End Web
-                Developer Nanodegree ↗</a> by Udacity. Its a fancy way of saying that I really know how technology,
+                class="paint-green"><span class="rotate-text" data-text="Front-End Web Developer Nanodegree ↗"><span
+                    class="rotate-inner">Front-End Web Developer Nanodegree ↗</span></span></a> by
+              Udacity. Its a fancy way of saying that I really know how technology,
               software and the web should work together.
             </p><br />
 
             <p>When not coding, you can find me exploring the latest web development trends on <a
-                href="https://devrant.com/" target="_blank" class="paint-green">devRant ↗</a>, reading
+                href="https://devrant.com/" target="_blank" class="paint-green"><span class="rotate-text"
+                  data-text="devRant ↗"><span class="rotate-inner">devRant ↗</span></span></a>, reading
               insightful articles on Medium, or enjoying a good binge-watch of Silicon Valley and Top Gear. I find
               inspiration in a hot cup of Lemon tea, the music of Pink Floyd, and of course, the endless knowledge on
-              <a href="https://stackexchange.com/users/6721461/manubhargav" target="_blank" class="paint-green">Stack
-                Overflow ↗</a>
+              <a href="https://stackexchange.com/users/6721461/manubhargav" target="_blank" class="paint-green"><span
+                  class="rotate-text" data-text="Stack Overflow ↗"><span class="rotate-inner">Stack
+                    Overflow ↗</span></span></a>
             </p>
           </div>
         </div>
@@ -104,22 +142,25 @@
           <div class="projects-list-container">
             <div class="project-container">
               <a href="https://manubhargav.github.io/Whack-a-mole/" target="_blank"
-                class="paint-red project-heading-link">Whack-a-mole ↗</a>
+                class="paint-red project-heading-link"><span class="rotate-text" data-text="Whack-a-mole ↗"><span
+                    class="rotate-inner">Whack-a-mole ↗</span></span></a>
               <p class="project-content">Whack-A-mole game in vanilla Javascript <br />
                 <em>Built with:</em> JavaScript, HTML5, CSS33
               </p>
             </div>
             <div class="project-container">
               <a href="https://manubhargav.github.io/GuestHouse/" target="_blank"
-                class="paint-red project-heading-link">The Guest House ↗</a>
-              <p class="project-content">Airbnb-like portal where users can book rooms and have a look at their
+                class="paint-red project-heading-link"><span class="rotate-text" data-text="The Guest House ↗"><span
+                    class="rotate-inner">The Guest House ↗</span></span></a>
+              <p class="project-content">Airbnb-like portal where users can booking rooms and have a look at their
                 bookings<br />
                 <em>Built with:</em> AngularJS, APIs. <em>Deployed on:</em> GitHub Pages with GitHub Actions
               </p>
             </div>
             <div class="project-container">
               <a href="https://manubhargav.github.io/NammaMetroMap/" target="_blank"
-                class="paint-red project-heading-link">Namma Metro Map ↗</a>
+                class="paint-red project-heading-link"><span class="rotate-text" data-text="Namma Metro Map ↗"><span
+                    class="rotate-inner">Namma Metro Map ↗</span></span></a>
               <p class="project-content">Progressive web app that shows Metro Rapid Transit in Bengaluru<br />
                 <em>Built with:</em> Javascript, KnockoutJS, Google Maps API, Wikipedia API .<br />
                 <em>Deployed on:</em> GitHub Pages with GitHub Actions
@@ -127,7 +168,8 @@
             </div>
             <div class="project-container">
               <a href="https://secret-coast-79189.herokuapp.com/" target="_blank"
-                class="paint-red project-heading-link">Galeria ↗</a>
+                class="paint-red project-heading-link"><span class="rotate-text" data-text="Galeria ↗"><span
+                    class="rotate-inner">Galeria ↗</span></span></a>
               <p class="project-content">Gallery app where users can showcase their art <br />
                 <em>Built with:</em> Ruby, Sinatra, PostgreSQL.<br />
                 <em>Deployed on:</em> Heroku, AWS S3
@@ -145,40 +187,75 @@
         <div class="col-1"></div>
       </div>
     </div>
-    <div id="contact" class="container h-100 contact-container">
-      <div class="row h-75 justify-content-center">
+    <div id="contact" class="container contact-container" style="padding-bottom: 60px;">
+      <div class="row justify-content-center">
         <div class="col-8 col-offset-4 contact-container-content">
           <div class="main-contact-heading paint-blue">Let's Chat</div>
           <div class="sub-contact-heading">
-            If you would like to get in touch, please shoot me an email. I will try to get back to you within a
-            day or two!
+            Have a question or want to work together? Drop me a message and I'll get back to you!
           </div> <br />
-          <div class="text-center">
-            <span class="contact-details"><a class="paint-blue"
-                href="mailto:manubhargav27@gmail.com?subject=Hey there!">Send an Email ↗</a></span>
-            <span class="contact-details"><a class="paint-blue" href="sms:+16194528256?&body=Hi there!">Click here to
-                text me! ↗</a></span>
-          </div>
+          <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="1c16478a-6746-4ee4-ab1a-75f5631bf5fb">
+            <input type="hidden" name="subject" value="New contact from portfolio!">
+            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="form-submit-btn">Send Message →</button>
+            </div>
           </form>
+          <div id="form-success-msg" class="text-center" style="display: none;">
+            <p class="paint-blue" style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Form submitted
+              successfully!</p>
+            <p style="color: var(--text-secondary); font-size: 18px;">Thank you for reaching out to us.<br>We'll review
+              your submission and get back to you soon.</p>
+          </div>
         </div>
       </div>
       <footer style="text-align: center; padding: 20px 0;">
         <div class="footer-links">
-          <a href="https://github.com/Manubhargav/" target="_blank"><i class="fa fa-2x fa-github mx-4"
-              aria-hidden="true"></i></a>
-          <a href="https://www.linkedin.com/in/manubhargav/" target="_blank"><i class="fa fa-2x fa-linkedin mx-4"
-              aria-hidden="true"></i></a>
-          <a href="https://www.instagram.com/manubhargav/" target="_blank"><i class="fa fa-2x fa-instagram mx-4"
-              aria-hidden="true"></i></a>
-          <a href="https://twitter.com/manubhargav27" target="_blank"><i class="fa fa-2x fa-twitter mx-4"
-              aria-hidden="true"></i></a>
-          <a href="https://medium.com/@manubhargav" target="_blank"><i class="fa fa-2x fa-medium mx-4"
-              aria-hidden="true"></i></a>
+          <a href="https://github.com/Manubhargav/" target="_blank" class="mx-4">
+            <span class="rotate-icon">
+              <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+              <i class="fa fa-2x fa-github clone" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a href="https://www.linkedin.com/in/manubhargav/" target="_blank" class="mx-4">
+            <span class="rotate-icon">
+              <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
+              <i class="fa fa-2x fa-linkedin clone" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a href="https://www.instagram.com/manubhargav/" target="_blank" class="mx-4">
+            <span class="rotate-icon">
+              <i class="fa fa-2x fa-instagram" aria-hidden="true"></i>
+              <i class="fa fa-2x fa-instagram clone" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a href="https://twitter.com/manubhargav27" target="_blank" class="mx-4">
+            <span class="rotate-icon">
+              <i class="fa fa-2x fa-twitter" aria-hidden="true"></i>
+              <i class="fa fa-2x fa-twitter clone" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a href="https://medium.com/@manubhargav" target="_blank" class="mx-4">
+            <span class="rotate-icon">
+              <i class="fa fa-2x fa-medium" aria-hidden="true"></i>
+              <i class="fa fa-2x fa-medium clone" aria-hidden="true"></i>
+            </span>
+          </a>
         </div>
       </footer>
     </div>
   </main>
-
+  <script src="js/main.js"></script>
 </body>
 
 </html>
