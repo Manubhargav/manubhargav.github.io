@@ -81,8 +81,19 @@ header {
     border-radius: 50%;
     background-color: var(--navbar-circle-bg);
     display: inline-block;
-    transition: background-color var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease;
     margin-right: 12px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Scrolled state: replace circle with portrait icon */
+body.scrolled .navbar-circle {
+    min-width: 24px;
+    min-height: 24px;
+    background-image: url('../assets/apple-touch-icon.png');
+    background-color: transparent;
 }
 
 .fill-navbar-brand a {
@@ -138,6 +149,12 @@ body.scrolled .brand-char.keep {
         0 0 20px var(--text-primary),
         0 0 30px var(--text-primary);
     animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Disable glow animation when scrolled */
+body.scrolled .navbar-circle.glow {
+    animation: none;
+    box-shadow: none;
 }
 
 @keyframes pulseGlow {
