@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
         for (var i = 0; i < text.length; i++) {
             var charSpan = document.createElement('span');
             charSpan.className = 'char-wrap';
-            // Use non-breaking space for actual spaces so layout doesn't collapse
-            var char = text[i] === ' ' ? '\u00A0' : text[i];
+            // Use normal space; CSS white-space: pre prevents collapse
+            var char = text[i];
             charSpan.setAttribute('data-char', char);
             charSpan.style.setProperty('--delay', (i * 0.02) + 's');
 
@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const charSpan = document.createElement('span');
             charSpan.className = 'brand-char';
 
-            // Re-insert spaces as non-breaking spaces to preserve layout
-            const char = text[i] === ' ' ? '\u00A0' : text[i];
+            // Keep normal spaces; CSS white-space: pre prevents collapse
+            const char = text[i];
             charSpan.textContent = char;
 
             // Keep 'M' (index 0) and 'S' (index 5 in "Manu Srirangarajan")
@@ -215,6 +215,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
         });
     }
+
+    // =========================================
+    // 7. Auto-collapse mobile navbar on link click
+    // =========================================
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+        link.addEventListener('click', function () {
+            if (typeof $ !== 'undefined') {
+                $('.navbar-collapse').collapse('hide');
+            }
+        });
+    });
 
     // Run once on load in case page is already scrolled
     handleNavbarShrink();

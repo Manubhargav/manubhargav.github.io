@@ -23,10 +23,10 @@ Personal portfolio site for Manu Bhargav Srirangarajan — Fullstack Developer.
 
 | Project | Description | Tech |
 |---------|-------------|------|
-| [Whack-a-mole](https://manubhargav.github.io/Whack-a-mole/) | Classic browser game | JavaScript, HTML5, CSS3 |
-| [The Guest House](https://manubhargav.github.io/GuestHouse/) | Airbnb-like booking portal | AngularJS, APIs |
-| [Namma Metro Map](https://manubhargav.github.io/NammaMetroMap/) | Bengaluru metro PWA | KnockoutJS, Google Maps API |
-| [Galeria](https://secret-coast-79189.herokuapp.com/) | Art gallery app | Ruby, Sinatra, PostgreSQL |
+| [Boardly](https://boardly-henna.vercel.app) | Real-time collaborative Kanban board | React, TypeScript, Firebase, @dnd-kit |
+| [Mood Board Creator](https://mood-board-jet.vercel.app/) | Canvas-based mood board with real-time collaboration | React, TypeScript, Konva.js, Firebase |
+| [InstantPoll](https://instant-poll-coral.vercel.app/) | Real-time polling app with live results | React, TypeScript, Firebase, Framer Motion |
+| [Namma Metro Map](https://manubhargav.github.io/NammaMetroMap/) | Interactive Bengaluru metro map | JavaScript, jQuery, KnockoutJS, Leaflet.js |
 
 > *This list is evolving — more projects are currently in the works!*
 ## Project Structure

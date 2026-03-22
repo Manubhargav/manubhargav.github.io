@@ -116,6 +116,7 @@ body.scrolled .navbar-circle {
 
 .brand-char {
     display: inline-block;
+    white-space: pre;
     transition: font-size 0.4s cubic-bezier(0.76, 0, 0.24, 1),
         opacity 0.4s cubic-bezier(0.76, 0, 0.24, 1),
         color 0.4s ease;
@@ -258,11 +259,8 @@ body.scrolled .navbar-circle.glow {
     background-color: var(--accent-blue);
 }
 
-.about-nav-item:hover::after,
 .about-nav-item.active::after,
-.work-nav-item:hover::after,
 .work-nav-item.active::after,
-.contact-nav-item:hover::after,
 .contact-nav-item.active::after {
     transform: scaleX(1);
 }
@@ -584,6 +582,7 @@ hr {
     position: relative;
     display: inline-flex;
     flex-direction: column;
+    white-space: pre;
 }
 
 .char-wrap .char-inner {
@@ -652,6 +651,44 @@ a:hover .rotate-icon i {
 }
 
 @media screen and (max-width: 768px) {
+
+    .brand,
+    .brand-char {
+        font-size: 1.1rem !important;
+    }
+
+    body.scrolled .brand-char.keep {
+        font-size: 1rem !important;
+    }
+
+    body.scrolled .brand-char.hide {
+        font-size: 0 !important;
+    }
+
+    .fill-navbar-brand {
+        padding-left: 0.5rem;
+    }
+
+    .fill-navbar-brand a {
+        padding: 8px 4px;
+    }
+
+    .navbar-circle {
+        margin-right: 8px;
+    }
+
+    .sub-contact-heading,
+    .about-content,
+    .work-sub-heading,
+    .project-content {
+        font-size: 18px;
+    }
+
+    .main-contact-heading,
+    .project-heading-link {
+        font-size: 28px;
+    }
+
     .col-8 {
         flex: 0 0 100%;
         max-width: 100%;
