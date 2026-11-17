@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio v2 — Redesign Questionnaire</title>
+<style>
+  :root{--fg:#e8f5e9;--muted:#a5d6a7;--accent:#4caf50;--accent-dim:#2e7d32;--bg:#0b120b;--card:#121a12;--border:#2d4a2d;--ink:#e8f5e9;}
+  *{box-sizing:border-box}body{margin:0;font-family:ui-mono,SFMono-Regular,Menlo,Consolas,monospace;background:var(--bg);color:var(--fg);line-height:1.5;padding:24px}
+  h1{font-size:1.5rem;margin:0 0 2px 0;letter-spacing:-0.02em}h1 em{font-style:normal;color:var(--muted);font-weight:400}
+  .sub{color:var(--muted);font-size:0.85rem;margin-bottom:24px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px}
+  .sec{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);margin-bottom:12px;font-weight:700}
+  table{width:100%;border-collapse:collapse;font-size:0.9rem}
+  th{text-align:left;color:var(--muted);font-weight:500;padding:8px 6px;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid var(--border)}
+  td{padding:10px 6px;border-bottom:1px solid #1a261a;vertical-align:top}
+  tr:hover{background:#101c10}
+  .q{font-weight:600;color:var(--fg);white-space:pre-wrap}
+  .tag{display:inline-block;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.05em;padding:1px 6px;border-radius:8px;background:#1a261a;color:#81c784;margin-right:6px}
+  .opts{display:grid;gap:6px}
+  label{display:flex;align-items:center;gap:8px;cursor:pointer;color:#c8e6c9;font-size:0.9rem}
+  input{accent-color:var(--accent);width:16px;height:16px}
+  .sugg{color:var(--accent);font-size:0.78rem;font-weight:700}
+  .open input[type=text]{width:100%;background:#0e180e;border:1px solid var(--border);color:var(--fg);padding:6px 8px;border-radius:6px}
+  .note{color:var(--muted);font-size:0.8rem;margin-top:4px}
+  .actions{display:flex;gap:12px;margin-top:8px}
+  button{background:var(--accent);color:#052005;border:none;padding:10px 20px;border-radius:6px;font-family:inherit;font-weight:700;cursor:pointer}
+  button:hover{background:#66bb6a}
+  button.secondary{background:transparent;color:var(--muted);border:1px solid var(--border)}
+  button.secondary:hover{color:var(--fg)}
+  .kbd{font-size:0.7rem;color:var(--muted)}
+  footer{color:var(--muted);font-size:0.75rem;margin-top:24px;border-top:1px solid var(--border);padding-top:16px}
+</style>
+</head>
+<body>
+<h1>Portfolio v2 Redesign <em>· questionnaire</em></h1>
+<div class="sub">Pre-filled with my best guesses from our brief — check / change what's wrong, then submit.</div>
+
+<form>
+<div class="card">
+<div class="sec">A · Stack &amp; Hosting</div>
+<table>
+<tr><th style="width:26%">#</th><th style="width:44%">Question</th><th>Your answer</th></tr>
+<tr>
+<td><span class="tag">radio</span>1</td>
+<td class="q">Build stack for v2</td>
+<td>
+<div class="opts">
+<label><input type="radio" name="a1" value="nextjs" checked> Next.js (App Router) + Tailwind + Motion (Framer Motion) <span class="sugg">[suggested]</span></label>
+<label><input type="radio" name="a1" value="astro"> Astro + Tailwind + Motion</label>
+<label><input type="radio" name="a1" value="static"> Static HTML + CSS + vanilla JS (keep current approach)</label>
+<label><input type="radio" name="a1" value="other"> Other (specify below)</label>
+</div>
+<div class="note">Vercel-friendly, supports skeletons, scroll/parallax, and shimmer loaders natively.</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">radio">2</td>
+<td class="q">Deployment target</td>
+<td>
+<div class="opts">
+<label><input type="radio" name="a2" value="vercel" checked> Vercel (Free Hobby) — connect this GitHub repo <span class="sugg">[suggested]</span></label>
+<label><input type="radio" name="a2" value="pages"> Stay on GitHub Pages (static only)</label>
+<label><input type="radio" name="a2" value="cloudflare"> Cloudflare Pages</label>
+<label><input type="radio" name="a2" value="other"> Other</label>
+</div>
+<div class="note">Vercel unlocks serverless functions (e.g. contact form) and preview deployments per branch.</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">checkbox">3</td>
+<td class="q">Keep what from v1</td>
+<td>
+<div class="opts">
+<label><input type="checkbox" name="a3" value="dark-theme" checked> Dark theme (green accent)</label>
+<label><input type="checkbox" name="a3" value="resume" checked> Resume PDF download</label>
+<label><input type="checkbox" name="a3" value="contact-form" checked> Web3Forms contact form</label>
+<label><input type="checkbox" name="a3" value="theme-switcher"> Light/dark theme switcher</label>
+<label><input type="checkbox" name="a3" value="nothing"> Nothing — rebuild from scratch</label>
+</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">open">4</td>
+<td class="q">Custom domain?</td>
+<td><div class="open"><input type="text" name="a4" placeholder="e.g. manubhargav.com (leave blank to use vercel.app subdomain)"></div></td>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<div class="sec">B · Content &amp; Projects</div>
+<table>
+<tr><th style="width:26%">#</th><th style="width:44%">Question</th><th>Your answer</th></tr>
+<tr>
+<td><span class="tag">checkbox">5</td>
+<td class="q">Sections to include</td>
+<td>
+<div class="opts">
+<label><input type="checkbox" name="b1" value="hero" checked> Hero (name, role, one-liner, CTA)</label>
+<label><input type="checkbox" name="b1" value="about" checked> About / Who am I</label>
+<label><input type="checkbox" name="b1" value="work" checked> Work / Projects (screenshot-first)</label>
+<label><input type="checkbox" name="b1" value="experience"> Experience (Amazon, Splunk, SDSU)</label>
+<label><input type="checkbox" name="b1" value="skills"> Skills / Tools (like justin-yang.vercel.app)</label>
+<label><input type="checkbox" name="b1" value="socials"> Socials / callout cards (Lando-style)</label>
+<label><input type="checkbox" name="b1" value="blog"> Writing / blog</label>
+<label><input type="checkbox" name="b1" value="hall-of-fame"> "Hall of Fame" / highlights (Lando-style campaigns)</label>
+</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">radio">6</td>
+<td class="q">Project layout (recruiter impact)</td>
+<td>
+<div class="opts">
+<label><input type="radio" name="b2" value="masonry" checked> Masonry grid — project card + screenshot, lazy-loads on scroll <span class="sugg">[suggested]</span></label>
+<label><input type="radio" name="b2" value="horizontal"> Horizontal scroll strip of project cards</label>
+<label><input type="radio" name="b2" value="stacked"> Stacked sub-sections per project (Framer /agents style)</label>
+<label><input type="radio" name="b2" value="other"> Other / decide later</label>
+</div>
+<div class="note">Cards show screenshot + title + one-line + tech chips; click opens a detail modal/page.</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">open">7</td>
+<td class="q">Projects to feature (with links)</td>
+<td><div class="open"><input type="text" name="b3" placeholder="e.g. Boardly, Mood Board, InstantPoll, Namma Metro Map + any new ones"></div></td>
+</tr>
+<tr>
+<td><span class="tag">checkbox">8</td>
+<td class="q">Project screenshots ready?</td>
+<td>
+<div class="opts">
+<label><input type="checkbox" name="b4" value="yes"> Yes — I'll provide them</label>
+<label><input type="checkbox" name="b4" value="no" checked> No — use placeholders / generated og-images for now <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="b4" value="capture"> Capture live site screenshots automatically</label>
+</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">radio">9</td>
+<td class="q">Resume</td>
+<td>
+<div class="opts">
+<label><input type="radio" name="b5" value="pdf" checked> Link to existing assets/resume.pdf <span class="sugg">[suggested]</span></label>
+<label><input type="radio" name="b5" value="page"> Dedicated in-page resume section</label>
+<label><input type="radio" name="b5" value="skip"> Skip resume</label>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<div class="sec">C · Visuals &amp; Media</div>
+<table>
+<tr><th style="width:26%">#</th><th style="width:44%">Question</th><th>Your answer</th></tr>
+<tr>
+<td><span class="tag">checkbox">10</td>
+<td class="q">Parallax / photo effects</td>
+<td>
+<div class="opts">
+<label><input type="checkbox" name="c1" value="hero" checked> Hero: portrait parallax on scroll <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="c1" value="helmet"> Parallax "helmet"-style photos (Lando-style) <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="c1" value="horizontal"> Horizontal scroll section with scrubbing photos</label>
+<label><input type="checkbox" name="c1" value="masonry"> Masonry layout with reveal-on-scroll images</label>
+<label><input type="checkbox" name="c1" value="none"> None — keep it flat</label>
+</div>
+<div class="note">Need source images: portrait + any helmet/styled shots you want to use.</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">radio">11</td>
+<td class="q">Accent color</td>
+<td>
+<div class="opts">
+<label><input type="radio" name="c2" value="green" checked> Green (your current theme) <span class="sugg">[suggested]</span></label>
+<label><input type="radio" name="c2" value="slate"> Slate / neutral</label>
+<label><input type="radio" name="c2" value="purple"> Purple</label>
+<label><input type="radio" name="c2" value="other"> Other</label>
+</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">checkbox">12</td>
+<td class="q">Loading states</td>
+<td>
+<div class="opts">
+<label><input type="checkbox" name="c3" value="skeleton" checked> Skeleton shimmer on async components <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="c3" value="blur"> Blur placeholder for images</label>
+<label><input type="checkbox" name="c3" value="none"> None</label>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<div class="sec">D · Layout &amp; Interactions</div>
+<table>
+<tr><th style="width:26%">#</th><th style="width:44%">Question</th><th>Your answer</th></tr>
+<tr>
+<td><span class="tag">checkbox">13</td>
+<td class="q">Motion.dev animations</td>
+<td>
+<div class="opts">
+<label><input type="checkbox" name="d1" value="hero" checked> Hero stagger / fade-in <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="d1" value="sections" checked> Scroll-triggered reveal on every section <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="d1" value="cards"> Staggered project cards</label>
+<label><input type="checkbox" name="d1" value="nav"> Left nav with stacking sub-sections (Framer /agents style)</label>
+<label><input type="checkbox" name="d1" value="cursor"> Custom cursor effects</label>
+<label><input type="checkbox" name="d1" value="exit"> Exit animations on route/tab change</label>
+</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">radio">14</td>
+<td class="q">Reading-progress bar (justin-yang style)</td>
+<td>
+<div class="opts">
+<label><input type="radio" name="d2" value="top" checked> Top thin bar <span class="sugg">[suggested]</span></label>
+<label><input type="radio" name="d2" value="sides"> Left/right vertical bars</label>
+<label><input type="radio" name="d2" value="none"> Skip</label>
+</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">checkbox">15</td>
+<td class="q">Socials / callout layout</td>
+<td>
+<div class="opts">
+<label><input type="checkbox" name="d3" value="cards" checked> Callout-style social cards (GitHub, LinkedIn, Instagram, Twitter/X, Medium, email) <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="d3" value="floating"> Floating contact button</label>
+<label><input type="checkbox" name="d3" value="newsletter"> Newsletter signup</label>
+</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">radio">16</td>
+<td class="q">Mobile approach</td>
+<td>
+<div class="opts">
+<label><input type="radio" name="d4" value="mobile-first" checked> Mobile-first, horizontal scroll disabled on mobile <span class="sugg">[suggested]</span></label>
+<label><input type="radio" name="d4" value="desktop-first"> Desktop-first experiential site</label>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+<div class="card">
+<div class="sec">E · Polish &amp; Launch</div>
+<table>
+<tr><th style="width:26%">#</th><th style="width:44%">Question</th><th>Your answer</th></tr>
+<tr>
+<td><span class="tag">checkbox">17</td>
+<td class="q">Audit checklist (after build)</td>
+<td>
+<div class="opts">
+<label><input type="checkbox" name="e1" value="a11y" checked> Accessibility (contrast, keyboard, ARIA) <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="e1" value="perf" checked> Performance / Lighthouse <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="e1" value="seo"> SEO metadata + Open Graph <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="e1" value="broken"> Broken links + images</label>
+<label><input type="checkbox" name="e1" value="hardcoded"> No hardcoded colors outside design tokens</label>
+</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">checkbox">18</td>
+<td class="q">Analytics</td>
+<td>
+<div class="opts">
+<label><input type="checkbox" name="e2" value="vercel" checked> Vercel Analytics <span class="sugg">[suggested]</span></label>
+<label><input type="checkbox" name="e2" value="plausible"> Plausible</label>
+<label><input type="checkbox" name="e2" value="none"> None</label>
+</div>
+</td>
+</tr>
+<tr>
+<td><span class="tag">open">19</td>
+<td class="q">Your name/role line for hero</td>
+<td><div class="open"><input type="text" name="e3" value="Manu Bhargav Srirangarajan — Frontend Engineer @ Amazon"></div></td>
+</tr>
+<tr>
+<td><span class="tag">open">20</td>
+<td class="q">One-line tagline</td>
+<td><div class="open"><input type="text" name="e4" value="I try making the web an awesome place."></div></td>
+</tr>
+<tr>
+<td><span class="tag">open">21</td>
+<td class="q">Anything else?</td>
+<td><div class="open"><input type="text" name="e5" placeholder="Questions, constraints, hard deadlines…"></div></td>
+</tr>
+</table>
+</div>
+
+<div class="actions">
+<button type="button" id="gen-md">Generate markdown answers</button>
+<button type="button" class="secondary" id="copy-md" disabled>Copy to clipboard</button>
+<button type="button" class="secondary" onclick="alert('Paste your picks in chat — I’ll use them to scaffold v2 on branch portfolio/v2-redesign.')">I’ll reply in chat instead</button>
+</div>
+<div id="md-out" style="margin-top:20px;display:none">
+<div class="sec">Your answers (copy &amp; paste into chat)</div>
+<pre id="md-block" style="background:#0e180e;border:1px solid var(--border);border-radius:8px;padding:14px 18px;overflow:auto;font-size:0.82rem;line-height:1.5;max-height:420px;white-space:pre-wrap"></pre>
+</div>
+</form>
+
+<script>
+(function(){
+var form = document.querySelector('form');
+var out = document.getElementById('md-out');
+var block = document.getElementById('md-block');
+var gen = document.getElementById('gen-md');
+var copy = document.getElementById('copy-md');
+
+function checked(name){
+  var els = form.elements[name];
+  if(!els) return [];
+  if(els.length === undefined){ return els.checked ? [els.value] : []; }
+  var v=[]; for(var i=0;i<els.length;i++){ if(els[i].checked) v.push(els[i].value); }
+  return v;
+}
+function one(name){
+  var els = form.elements[name];
+  if(!els) return '';
+  if(els.length === undefined){ return els.value; }
+  for(var i=0;i<els.length;i++){ if(els[i].checked) return els[i].value; }
+  return '';
+}
+
+function labelFor(input){
+  var id = input && input.id;
+  if(id){ var l = document.querySelector('label[for="'+id+'"]'); if(l) return l.textContent.trim(); }
+  var p = input && input.closest && input.closest('label');
+  if(p) return p.textContent.replace(/\s+/g,' ').trim();
+  return '';
+}
+
+gen.onclick = function(){
+  var lines = [];
+  lines.push('# Portfolio v2 — questionnaire answers');
+  lines.push('');
+  lines.push('Generated from the pre-filled questionnaire on branch `portfolio/v2-redesign`.');
+  lines.push('');
+
+  var groups = [
+    { key: 'a1', label: 'Stack' },
+    { key: 'a2', label: 'Deployment target' },
+    { key: 'a3', label: 'Keep from v1' },
+    { key: 'a4', label: 'Custom domain' },
+    { key: 'b1', label: 'Sections' },
+    { key: 'b2', label: 'Project layout' },
+    { key: 'b3', label: 'Projects + links' },
+    { key: 'b4', label: 'Screenshots ready' },
+    { key: 'b5', label: 'Resume' },
+    { key: 'c1', label: 'Parallax / photo effects' },
+    { key: 'c2', label: 'Accent color' },
+    { key: 'c3', label: 'Loading states' },
+    { key: 'd1', label: 'Motion animations' },
+    { key: 'd2', label: 'Reading progress' },
+    { key: 'd3', label: 'Socials layout' },
+    { key: 'd4', label: 'Mobile approach' },
+    { key: 'e1', label: 'Audit items' },
+    { key: 'e2', label: 'Analytics' },
+    { key: 'e3', label: 'Hero name / role' },
+    { key: 'e4', label: 'Tagline' },
+    { key: 'e5', label: 'Anything else' },
+  ];
+
+  groups.forEach(function(g){
+    var vals = [];
+    var multi = ['a3','b1','c1','d1','d3','e1','e2'].includes(g.key);
+    if(multi){ vals = checked(g.key); } else { var v = one(g.key); if(v) vals = [v]; }
+    if(vals.length === 0) return;
+    lines.push('- **'+g.label+':** '+vals.join(', '));
+  });
+
+  block.textContent = lines.join('\n');
+  out.style.display = 'block';
+  copy.disabled = false;
+};
+
+copy.onclick = function(){
+  navigator.clipboard.writeText(block.textContent).then(function(){
+    copy.textContent = 'Copied!';
+    setTimeout(function(){ copy.textContent = 'Copy to clipboard'; }, 1500);
+  });
+};
+})();
+</script>
+
+</body>
+</html>
