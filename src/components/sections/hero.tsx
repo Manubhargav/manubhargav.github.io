@@ -14,6 +14,14 @@ export function Hero() {
   const portraitY = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
+  // The name folds into the monogram as the hero scrolls away.
+  const nameScaleX = useTransform(scrollYProgress, [0, 0.18, 0.4], [1, 0.02, 0.02]);
+  const nameOpacity = useTransform(scrollYProgress, [0, 0.12, 0.3], [1, 0, 0]);
+  const nameRotateX = useTransform(scrollYProgress, [0, 0.18, 0.4], [0, -70, -70]);
+  const monoScaleX = useTransform(scrollYProgress, [0, 0.18, 0.4], [0.02, 1, 1]);
+  const monoOpacity = useTransform(scrollYProgress, [0, 0.12, 0.3], [0, 1, 1]);
+  const monoRotateX = useTransform(scrollYProgress, [0, 0.18, 0.4], [70, 0, 0]);
+
   return (
     <section
       ref={ref}
@@ -22,14 +30,34 @@ export function Hero() {
     >
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
         <motion.div style={{ y: textY }} className="flex flex-col gap-6">
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl md:text-6xl font-bold tracking-tight text-foreground"
-          >
-            {HERO.name}
-          </motion.h1>
+          <div className="relative h-[9rem] md:h-[13rem] flex items-center">
+            <motion.h1
+              style={{
+                scaleX: nameScaleX,
+                opacity: nameOpacity,
+                rotateX: nameRotateX,
+                transformOrigin: "left center",
+              }}
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="absolute left-0 text-4xl md:text-6xl font-bold tracking-tight text-foreground"
+            >
+              {HERO.name}
+            </motion.h1>
+            <motion.span
+              style={{
+                scaleX: monoScaleX,
+                opacity: monoOpacity,
+                rotateX: monoRotateX,
+                transformOrigin: "left center",
+              }}
+              aria-hidden="true"
+              className="absolute left-0 text-5xl md:text-8xl font-black tracking-tighter text-primary"
+            >
+              {HERO.monogram}
+            </motion.span>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
@@ -77,10 +105,10 @@ export function Hero() {
             style={{ y: portraitY }}
             className="relative"
           >
-            <div className="absolute -inset-6 rounded-2xl bg-gradient-to-b from-primary/10 to-transparent blur-2xl" />
+            <div className="absolute -inset-6 rounded-full bg-gradient-to-b from-primary/10 to-transparent blur-2xl" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              className="relative h-[560px] w-auto object-cover object-top rounded-2xl border border-border shadow-2xl"
+              className="relative h-[520px] w-[520px] object-cover rounded-full border border-border shadow-2xl"
               src="/img/Manu_Potrait.jpg"
               alt="Manu Bhargav portrait"
             />

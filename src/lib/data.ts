@@ -1,10 +1,10 @@
 export const HERO = {
   name: "Manu Bhargav Srirangarajan",
+  monogram: "MS/",
   role: "Senior Software Engineer",
   tagline: "I try making the web an awesome place.",
   resume: "/assets/resume.pdf",
   location: "Seattle, WA",
-  email: "manubhargav27@gmail.com",
 } as const;
 
 export const SOCIALS = [
@@ -38,12 +38,18 @@ export const SOCIALS = [
     handle: "@manubhargav",
     icon: "book-open",
   },
-  {
-    label: "Email",
-    href: "mailto:manubhargav27@gmail.com",
-    handle: "manubhargav27@gmail.com",
-    icon: "mail",
-  },
+] as const;
+
+// Text wordmarks for the collaborator marquee. Swap for real SVG logos when available.
+export const MARQUEE = [
+  { label: "amazon", style: "font-semibold tracking-tight lowercase" },
+  { label: "splunk", style: "font-medium lowercase" },
+  { label: "cisco", style: "font-semibold lowercase tracking-widest" },
+  { label: "Truist", style: "font-semibold" },
+  { label: "UL", style: "font-black tracking-tight" },
+  { label: "SDSU", style: "font-bold tracking-wide" },
+  { label: "Udacity", style: "font-medium" },
+  { label: "VTU", style: "font-bold tracking-widest" },
 ] as const;
 
 export const PROJECTS = [
@@ -64,7 +70,11 @@ export const PROJECTS = [
     ],
     link: "https://boardly-henna.vercel.app",
     repo: "https://github.com/Manubhargav/boardly",
-    screenshot: "/projects/boardly.png",
+    shots: [
+      { src: "/projects/boardly-hero.png", caption: "Landing and live demo" },
+      { src: "/projects/boardly-board.png", caption: "Kanban board, drag and drop" },
+      { src: "/projects/boardly-collab.png", caption: "Multi-user collaboration" },
+    ],
   },
   {
     id: "mood-board",
@@ -83,7 +93,10 @@ export const PROJECTS = [
     ],
     link: "https://mood-board-jet.vercel.app/",
     repo: "https://github.com/Manubhargav/mood-board",
-    screenshot: "/projects/mood-board.png",
+    shots: [
+      { src: "/projects/mood-board-hero.png", caption: "Landing page" },
+      { src: "/projects/mood-board-canvas.png", caption: "Canvas and image tools" },
+    ],
   },
   {
     id: "instant-poll",
@@ -101,7 +114,10 @@ export const PROJECTS = [
     ],
     link: "https://instant-poll-coral.vercel.app/",
     repo: "https://github.com/Manubhargav/instant-poll",
-    screenshot: "/projects/instant-poll.png",
+    shots: [
+      { src: "/projects/instant-poll-hero.png", caption: "Landing page" },
+      { src: "/projects/instant-poll-live.png", caption: "Live results and charts" },
+    ],
   },
   {
     id: "namma-metro",
@@ -112,7 +128,9 @@ export const PROJECTS = [
     tech: ["JavaScript", "jQuery", "Knockout JS", "Leaflet.js"],
     link: "https://manubhargav.github.io/NammaMetroMap/",
     repo: "https://github.com/Manubhargav/NammaMetroMap",
-    screenshot: "/projects/namma-metro.png",
+    shots: [
+      { src: "/projects/namma-metro-map.png", caption: "Interactive metro map" },
+    ],
   },
 ] as const;
 
@@ -121,7 +139,7 @@ export const EXPERIENCE = [
     role: "Front-end Engineer",
     company: "Amazon",
     location: "Seattle, WA",
-    period: "Nov 2025 - Present",
+    period: "Nov 2024 - Present",
     bullets: [
       "Led frontend development of a critical security incident response platform serving 5,000+ users, building 15+ complex features including real-time incident tracking, reducing case investigation time by 40% through improved UI/UX workflows.",
       "Engineered full-stack cloud infrastructure (AWS Lambda, S3, DynamoDB, OpenSearch) and Python Flask APIs, enabling real-time incident data processing for 100K+ daily events with sub-second response times and 99.9% availability SLA.",
@@ -146,7 +164,7 @@ export const EXPERIENCE = [
     role: "Software Engineer",
     company: "Splunk",
     location: "San Jose, CA",
-    period: "May 2022 - Oct 2025",
+    period: "Jun 2023 - Oct 2024",
     bullets: [
       "Architected a shared component library with Storybook documentation and Module Federation, enabling code reuse across 4 product teams, reducing development time by 30% and ensuring 100% design consistency through automated visual regression testing with Cypress and Jest at 90% code coverage, reducing production defects by 60%.",
       "Developed frontend components for a security dashboard optimizing real-time data visualization with WebSocket subscriptions, client-side memoization, and intelligent cache invalidation, enabling security analysts to investigate 500+ daily incidents.",
@@ -187,6 +205,14 @@ export const EXPERIENCE = [
       "RxJs",
     ],
   },
+  {
+    role: "Engineering Intern",
+    company: "UL (Underwriters Laboratories)",
+    location: "Bangalore, India",
+    period: "2016",
+    bullets: [],
+    stack: [],
+  },
 ] as const;
 
 export const EDUCATION = [
@@ -195,37 +221,29 @@ export const EDUCATION = [
     company: "San Diego State University",
     location: "San Diego, CA",
     period: "Aug 2021 - May 2023",
-    bullets: [],
-    stack: [],
+  },
+  {
+    role: "Front-End Web Developer Nanodegree",
+    company: "Udacity",
+    location: "Online",
+    period: "2017",
   },
   {
     role: "Bachelor of Engineering, Information Science",
-    company: "Visvesvaraya Technological University",
+    company: "Visvesvaraya Technological University, Belagavi",
     location: "India",
     period: "Sep 2012 - Jun 2016",
-    bullets: [],
-    stack: [],
   },
 ] as const;
 
-export const METRICS = [
-  { value: "5,000+", label: "users on the incident response platform" },
-  { value: "100K+", label: "daily events processed with sub-second responses" },
-  { value: "40%", label: "bundle reduction, 60% Lighthouse improvement" },
-  { value: "10M+", label: "daily transactions on the Truist platform" },
-] as const;
-
-export const HIGHLIGHTS = [
-  {
-    title: "Real-time incident platform",
-    body: "15+ complex features for a security incident response platform, cutting case investigation time by 40%.",
-  },
-  {
-    title: "Shared component library",
-    body: "Storybook plus Module Federation across 4 product teams, reducing development time by 30%.",
-  },
-  {
-    title: "Enterprise scale",
-    body: "10M+ daily transactions and 500K+ concurrent users with 99.95% uptime at Truist.",
-  },
+// Placeholder frames. Replace files in public/gallery with real photos when ready.
+export const GALLERY = [
+  { id: "01", src: "/gallery/01.svg", caption: "Moment 01" },
+  { id: "02", src: "/gallery/02.svg", caption: "Moment 02" },
+  { id: "03", src: "/gallery/03.svg", caption: "Moment 03" },
+  { id: "04", src: "/gallery/04.svg", caption: "Moment 04" },
+  { id: "05", src: "/gallery/05.svg", caption: "Moment 05" },
+  { id: "06", src: "/gallery/06.svg", caption: "Moment 06" },
+  { id: "07", src: "/gallery/07.svg", caption: "Moment 07" },
+  { id: "08", src: "/gallery/08.svg", caption: "Moment 08" },
 ] as const;

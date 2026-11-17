@@ -8,8 +8,8 @@ const SECTIONS = [
   { id: "about", label: "About" },
   { id: "work", label: "Work" },
   { id: "experience", label: "Experience" },
+  { id: "gallery", label: "Gallery" },
   { id: "socials", label: "Socials" },
-  { id: "hall-of-fame", label: "Hall of Fame" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -64,8 +64,8 @@ export function Nav() {
               className={cn(
                 "text-[11px] tracking-wide whitespace-nowrap transition-all duration-300",
                 isActive
-                  ? "text-foreground opacity-100"
-                  : "text-muted-foreground opacity-0 group-hover:opacity-100"
+                  ? "text-primary font-semibold opacity-100"
+                  : "text-muted-foreground opacity-40 group-hover:opacity-90"
               )}
             >
               {s.label}
@@ -95,8 +95,8 @@ export function MobileNav() {
               className={cn(
                 "flex-1 min-w-[76px] px-2 py-2.5 text-center text-[10px] tracking-wide transition-colors",
                 isActive
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "text-primary font-semibold"
+                  : "text-muted-foreground opacity-60 hover:opacity-100"
               )}
             >
               {s.label}

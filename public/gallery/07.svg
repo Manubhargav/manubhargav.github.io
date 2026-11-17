@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="750" viewBox="0 0 600 750">
+<defs><linearGradient id="g7" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#332a1f"/><stop offset="1" stop-color="#080f08"/></linearGradient></defs>
+<rect width="600" height="750" fill="url(#g7)"/>
+<circle cx="300" cy="300" r="180" fill="#c9a24a" opacity="0.10"/>
+<circle cx="430" cy="470" r="110" fill="#c9a24a" opacity="0.07"/>
+<text x="36" y="690" fill="#c9a24a" opacity="0.6" font-family="monospace" font-size="20" letter-spacing="3">07 / MOMENT</text>
+</svg>
