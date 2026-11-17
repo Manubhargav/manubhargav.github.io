@@ -1,5 +1,5 @@
 export const HERO = {
-  name: "Manu Bhargav Srirangarajan",
+  name: "Manu Srirangarajan",
   monogram: "MS/",
   role: "Senior Software Engineer",
   tagline: "I try making the web an awesome place.",
@@ -8,72 +8,65 @@ export const HERO = {
 } as const;
 
 export const SOCIALS = [
-  {
-    label: "GitHub",
-    href: "https://github.com/Manubhargav/",
-    handle: "github.com/Manubhargav",
-    icon: "github",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/manubhargav/",
-    handle: "linkedin.com/in/manubhargav",
-    icon: "linkedin",
-  },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/manubhargav/",
-    handle: "@manubhargav",
-    icon: "instagram",
-  },
-  {
-    label: "Twitter / X",
-    href: "https://twitter.com/manubhargav27",
-    handle: "@manubhargav27",
-    icon: "x",
-  },
-  {
-    label: "Medium",
-    href: "https://medium.com/@manubhargav",
-    handle: "@manubhargav",
-    icon: "book-open",
-  },
+  { label: "GitHub", href: "https://github.com/Manubhargav/", handle: "@Manubhargav", icon: "github" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/manubhargav/", handle: "@manubhargav", icon: "linkedin" },
+  { label: "Instagram", href: "https://www.instagram.com/manubhargav/", handle: "@manubhargav", icon: "instagram" },
+  { label: "Twitter / X", href: "https://twitter.com/manubhargav27", handle: "@manubhargav27", icon: "x" },
+  { label: "Medium", href: "https://medium.com/@manubhargav", handle: "@manubhargav", icon: "medium" },
 ] as const;
 
-// Text wordmarks for the collaborator marquee. Swap for real SVG logos when available.
 export const MARQUEE = [
-  { label: "amazon", style: "font-semibold tracking-tight lowercase" },
-  { label: "splunk", style: "font-medium lowercase" },
-  { label: "cisco", style: "font-semibold lowercase tracking-widest" },
-  { label: "Truist", style: "font-semibold" },
-  { label: "UL", style: "font-black tracking-tight" },
-  { label: "SDSU", style: "font-bold tracking-wide" },
-  { label: "Udacity", style: "font-medium" },
-  { label: "VTU", style: "font-bold tracking-widest" },
+  { label: "Amazon", icon: "amazon" },
+  { label: "Splunk", icon: "splunk" },
+  { label: "Cisco", icon: "cisco" },
+  { label: "Truist", icon: "truist" },
+  { label: "UL", icon: "ul" },
+  { label: "SDSU", icon: "sdsu" },
+  { label: "Udacity", icon: "udacity" },
+  { label: "VTU Belagavi", icon: "vtu" },
 ] as const;
 
 export const PROJECTS = [
+  {
+    id: "depthfield",
+    title: "Depthfield",
+    subtitle: "Live crypto market microstructure viewer",
+    description:
+      "A browser instrument for reading real-time order books. WebGL depth heatmap, Canvas price ladder, L3 queue, cross-venue checks, and feed-integrity telemetry. No account or key.",
+    tech: ["TypeScript", "React", "Vite", "WebGL", "Canvas 2D", "Tailwind CSS", "Zustand", "Vitest"],
+    link: "https://depthfield-two.vercel.app/",
+    repo: "https://github.com/Manubhargav/depthfield",
+    shots: [
+      { src: "/projects/depthfield-hero.png", caption: "Live market scanner" },
+      { src: "/projects/depthfield-live.png", caption: "BTC-USD live book and studies" },
+    ],
+  },
+  {
+    id: "mini-figma",
+    title: "Mini Figma",
+    subtitle: "Collaborative whiteboard with live cursors",
+    description:
+      "A collaborative canvas for drawing shapes, text, and freehand strokes with live teammate cursors, undo/redo, layer controls, and PNG/SVG export. Built as a portfolio study in real-time state.",
+    tech: ["React", "TypeScript", "Konva.js", "Supabase Realtime", "Zustand", "Tailwind CSS", "shadcn/ui"],
+    link: "https://mini-figma-teal.vercel.app/",
+    repo: "https://github.com/Manubhargav/mini-figma",
+    shots: [
+      { src: "/projects/mini-figma-hero.png", caption: "Landing and live demo" },
+      { src: "/projects/mini-figma-canvas.png", caption: "Collaborative canvas with tools" },
+    ],
+  },
   {
     id: "boardly",
     title: "Boardly",
     subtitle: "Real-time collaborative Kanban board",
     description:
       "Drag-and-drop Kanban board with live multi-user collaboration, built with React, TypeScript, Vite, Tailwind CSS, Firebase, Zustand, and @dnd-kit.",
-    tech: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Tailwind CSS",
-      "Firebase",
-      "Zustand",
-      "@dnd-kit",
-    ],
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Firebase", "Zustand", "@dnd-kit"],
     link: "https://boardly-henna.vercel.app",
     repo: "https://github.com/Manubhargav/boardly",
     shots: [
       { src: "/projects/boardly-hero.png", caption: "Landing and live demo" },
       { src: "/projects/boardly-board.png", caption: "Kanban board, drag and drop" },
-      { src: "/projects/boardly-collab.png", caption: "Multi-user collaboration" },
     ],
   },
   {
@@ -82,15 +75,7 @@ export const PROJECTS = [
     subtitle: "Canvas-based mood board with real-time collaboration",
     description:
       "Visual mood board application with canvas-based image manipulation and real-time collaboration, built with React, TypeScript, Tailwind CSS, Konva.js, Firebase, Zustand, and Framer Motion.",
-    tech: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Konva.js",
-      "Firebase",
-      "Zustand",
-      "Framer Motion",
-    ],
+    tech: ["React", "TypeScript", "Tailwind CSS", "Konva.js", "Firebase", "Zustand", "Framer Motion"],
     link: "https://mood-board-jet.vercel.app/",
     repo: "https://github.com/Manubhargav/mood-board",
     shots: [
@@ -101,17 +86,10 @@ export const PROJECTS = [
   {
     id: "instant-poll",
     title: "InstantPoll",
-    subtitle: "Real-time polling app with live results and dynamic charts",
+    subtitle: "Real-time polling app with live results",
     description:
-      "Real-time polling app with live results and dynamic charts, built with React, TypeScript, Tailwind CSS, Firebase, Zustand, and Framer Motion.",
-    tech: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Firebase",
-      "Zustand",
-      "Framer Motion",
-    ],
+      "Real-time polling with live results and dynamic charts, built with React, TypeScript, Tailwind CSS, Firebase, Zustand, and Framer Motion.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Firebase", "Zustand", "Framer Motion"],
     link: "https://instant-poll-coral.vercel.app/",
     repo: "https://github.com/Manubhargav/instant-poll",
     shots: [
@@ -124,7 +102,7 @@ export const PROJECTS = [
     title: "Namma Metro Map",
     subtitle: "Interactive Bengaluru metro map",
     description:
-      "Sleek, interactive map interface showing operational Metro Rapid Transit in Bengaluru, built with JavaScript, jQuery, Knockout JS, and Leaflet.js.",
+      "An interactive map of Bengaluru's operational Metro Rapid Transit, built with JavaScript, jQuery, Knockout JS, and Leaflet.js.",
     tech: ["JavaScript", "jQuery", "Knockout JS", "Leaflet.js"],
     link: "https://manubhargav.github.io/NammaMetroMap/",
     repo: "https://github.com/Manubhargav/NammaMetroMap",
@@ -140,110 +118,56 @@ export const EXPERIENCE = [
     company: "Amazon",
     location: "Seattle, WA",
     period: "Nov 2024 - Present",
-    bullets: [
-      "Led frontend development of a critical security incident response platform serving 5,000+ users, building 15+ complex features including real-time incident tracking, reducing case investigation time by 40% through improved UI/UX workflows.",
-      "Engineered full-stack cloud infrastructure (AWS Lambda, S3, DynamoDB, OpenSearch) and Python Flask APIs, enabling real-time incident data processing for 100K+ daily events with sub-second response times and 99.9% availability SLA.",
-      "Optimized performance through multi-layered caching (Redis/Valkey, TanStack Query, service worker strategies) and advanced bundling (Vite code splitting, tree-shaking, CSS chunking), achieving 40% bundle reduction, 60% Lighthouse improvement, and sub-500ms Time to Interactive.",
-    ],
-    stack: [
-      "React",
-      "TypeScript",
-      "Cypress",
-      "Vite",
-      "TanStack Query",
-      "AWS CDK",
-      "Lambda",
-      "S3",
-      "CloudFront",
-      "Python",
-      "Flask",
-      "CQRS",
-    ],
+    summary:
+      "I lead frontend work on a security incident response platform serving 5,000+ users, and engineer the Python APIs and AWS services behind it.",
+    highlights: ["5,000+ users", "40% faster investigations", "60% Lift score gain"],
+    stack: ["React", "TypeScript", "Vite", "Python", "Flask", "AWS", "TanStack Query"],
   },
   {
     role: "Software Engineer",
     company: "Splunk",
     location: "San Jose, CA",
     period: "Jun 2023 - Oct 2024",
-    bullets: [
-      "Architected a shared component library with Storybook documentation and Module Federation, enabling code reuse across 4 product teams, reducing development time by 30% and ensuring 100% design consistency through automated visual regression testing with Cypress and Jest at 90% code coverage, reducing production defects by 60%.",
-      "Developed frontend components for a security dashboard optimizing real-time data visualization with WebSocket subscriptions, client-side memoization, and intelligent cache invalidation, enabling security analysts to investigate 500+ daily incidents.",
-      "Led design-to-production collaboration for 8 feature releases with UX designers, PMs, and QA across distributed teams, delivering on schedule with a 98% requirement acceptance rate.",
-    ],
-    stack: [
-      "React",
-      "TypeScript",
-      "Cypress",
-      "Jest",
-      "React Testing Library",
-      "Docusaurus",
-      "Styled Components",
-      "Docker",
-      "ESLint",
-    ],
+    summary:
+      "I built a shared component library used by four product teams and shipped real-time security dashboards with WebSocket data.",
+    highlights: ["4 teams", "30% less build time", "98% acceptance"],
+    stack: ["React", "TypeScript", "Storybook", "Jest", "Cypress", "WebSockets"],
   },
   {
     role: "Senior Software Engineer",
     company: "Truist Financial (via Infosys)",
     location: "Bangalore, India",
     period: "Feb 2017 - Jun 2021",
-    bullets: [
-      "Architected and delivered an enterprise financial platform handling 10M+ daily transactions using Angular and Java Spring Boot microservices, achieving 99.95% uptime SLA and supporting 500K+ concurrent users.",
-      "Mentored 7 junior engineers over 4 years, establishing Angular/TypeScript code review standards that improved quality scores by 35% and enabled 5 career advancements, including 1 promotion to senior engineer.",
-      "Reduced account list rendering time by 75% with a widget-based architecture and achieved a 71% Lighthouse mobile score improvement (52 to 89), increasing user engagement by 28% and reducing bounce rate by 18%.",
-    ],
-    stack: [
-      "Angular",
-      "TypeScript",
-      "Jasmine",
-      "Jest",
-      "Bootstrap",
-      "Node.js",
-      "Webpack",
-      "Java",
-      "Spring Boot",
-      "RxJs",
-    ],
+    summary:
+      "I delivered an enterprise financial platform handling millions of daily transactions and mentored seven engineers over four years.",
+    highlights: ["10M+ daily transactions", "99.95% uptime", "7 engineers mentored"],
+    stack: ["Angular", "TypeScript", "Java Spring Boot", "Node.js", "RxJS"],
   },
   {
     role: "Engineering Intern",
     company: "UL (Underwriters Laboratories)",
     location: "Bangalore, India",
     period: "2016",
-    bullets: [],
-    stack: [],
+    summary:
+      "Developed a decoupled Step Functions solution for UL fire safety inspectors to run building-code inspections and flag non-compliance inside building parts.",
+    highlights: ["AWS Step Functions", "Fire safety inspections"],
+    stack: ["AWS Step Functions", "Building-code compliance"],
   },
 ] as const;
 
 export const EDUCATION = [
-  {
-    role: "Master of Science, Computer Science",
-    company: "San Diego State University",
-    location: "San Diego, CA",
-    period: "Aug 2021 - May 2023",
-  },
-  {
-    role: "Front-End Web Developer Nanodegree",
-    company: "Udacity",
-    location: "Online",
-    period: "2017",
-  },
-  {
-    role: "Bachelor of Engineering, Information Science",
-    company: "Visvesvaraya Technological University, Belagavi",
-    location: "India",
-    period: "Sep 2012 - Jun 2016",
-  },
+  { role: "Master of Science, Computer Science", company: "San Diego State University", location: "San Diego, CA", period: "Aug 2021 - May 2023" },
+  { role: "Front-End Web Developer Nanodegree", company: "Udacity", location: "Online", period: "2017" },
+  { role: "Bachelor of Engineering, Information Science", company: "Visvesvaraya Technological University, Belagavi", location: "India", period: "Sep 2012 - Jun 2016" },
 ] as const;
 
-// Placeholder frames. Replace files in public/gallery with real photos when ready.
 export const GALLERY = [
-  { id: "01", src: "/gallery/01.svg", caption: "Moment 01" },
-  { id: "02", src: "/gallery/02.svg", caption: "Moment 02" },
-  { id: "03", src: "/gallery/03.svg", caption: "Moment 03" },
-  { id: "04", src: "/gallery/04.svg", caption: "Moment 04" },
-  { id: "05", src: "/gallery/05.svg", caption: "Moment 05" },
-  { id: "06", src: "/gallery/06.svg", caption: "Moment 06" },
-  { id: "07", src: "/gallery/07.svg", caption: "Moment 07" },
-  { id: "08", src: "/gallery/08.svg", caption: "Moment 08" },
+  { id: "01", src: "/gallery/01.svg", caption: "Moment 01", tall: true },
+  { id: "02", src: "/gallery/02.svg", caption: "Moment 02", tall: false },
+  { id: "03", src: "/gallery/03.svg", caption: "Moment 03", tall: true },
+  { id: "04", src: "/gallery/04.svg", caption: "Moment 04", tall: false },
+  { id: "05", src: "/gallery/05.svg", caption: "Moment 05", tall: true },
+  { id: "06", src: "/gallery/06.svg", caption: "Moment 06", tall: false },
+  { id: "07", src: "/gallery/07.svg", caption: "Moment 07", tall: true },
+  { id: "08", src: "/gallery/08.svg", caption: "Moment 08", tall: false },
 ] as const;

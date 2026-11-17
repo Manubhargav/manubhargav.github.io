@@ -1,50 +1,71 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "motion/react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { GALLERY } from "@/lib/data";
 import { ProjectImage } from "@/components/ui/project-image";
 
+function useDesktop() {
+  const [desktop, setDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return desktop;
+}
+
 export function Gallery() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = useRef<HTMLElement>(null);
+  const desktop = useDesktop();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+  const shift = useTransform(scrollYProgress, [0, 1], ["0%", "-46%"]);
 
   return (
-    <section ref={ref} id="gallery" className="py-24 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8 }}
-        >
+    <section
+      ref={ref}
+      id="gallery"
+      className={`relative ${desktop ? "h-[85vh]" : "py-20"}`}
+    >
+      <div
+        className={
+          desktop
+            ? "sticky top-0 h-screen flex flex-col justify-center overflow-hidden"
+            : ""
+        }
+      >
+        <div className="max-w-6xl mx-auto px-6 mb-8 w-full">
           <h2 className="text-3xl font-bold text-foreground">Moments</h2>
-          <p className="text-muted-foreground mt-2">
-            A horizontal strip of frames. Swap the placeholders for real photos.
-          </p>
-        </motion.div>
-      </div>
+        </div>
 
-      <div className="no-scrollbar flex gap-5 overflow-x-auto px-6 pb-4 lg:px-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
-        {GALLERY.map((item, i) => (
-          <motion.figure
-            key={item.id}
-            initial={{ opacity: 0, x: 60 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 60 }}
-            transition={{ delay: i * 0.06, duration: 0.6 }}
-            whileHover={{ y: -8 }}
-            className="group w-64 shrink-0 md:w-80"
+        <div
+          className={`no-scrollbar overflow-x-auto md:overflow-visible w-full ${
+            desktop ? "" : "px-6"
+          }`}
+        >
+          <motion.div
+            style={desktop ? { x: shift } : undefined}
+            className="flex w-max items-start gap-5 px-6"
           >
-            <ProjectImage
-              src={item.src}
-              alt={item.caption}
-              className="aspect-[4/5]"
-            />
-            <figcaption className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
-              <span>{item.caption}</span>
-              <span className="text-primary/60">{item.id}</span>
-            </figcaption>
-          </motion.figure>
-        ))}
+            {GALLERY.map((item) => (
+              <figure key={item.id} className="w-56 shrink-0 md:w-72">
+                <ProjectImage
+                  src={item.src}
+                  alt={item.caption}
+                  className={item.tall ? "aspect-[3/4]" : "aspect-square md:mt-12"}
+                />
+                <figcaption className="mt-3 text-xs text-muted-foreground">
+                  {item.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

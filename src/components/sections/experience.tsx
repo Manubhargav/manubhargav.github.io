@@ -1,13 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "motion/react";
+import { Reveal } from "@/components/ui/reveal";
 import { EXPERIENCE, EDUCATION } from "@/lib/data";
-import { SkeletonText } from "@/components/ui/skeleton";
 
 export function Experience() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section
@@ -15,104 +13,84 @@ export function Experience() {
       id="experience"
       className="px-6 py-24 bg-card border-y border-border"
     >
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8 }}
-          className="mb-12"
+      <div className="max-w-5xl mx-auto">
+        <h2
+          className="text-3xl font-bold text-foreground mb-14"
         >
-          <h2 className="text-3xl font-bold text-foreground">Experience</h2>
-          <p className="text-muted-foreground mt-2">
-            Front-end and full-stack work, most recent first.
-          </p>
-        </motion.div>
+          Experience
+        </h2>
 
-        {!isInView ? (
-          <SkeletonText count={5} lastWidth="70%" />
-        ) : (
-          <div className="space-y-14">
-            {EXPERIENCE.map((item, i) => (
-              <motion.article
-                key={item.company + item.period}
-                initial={{ opacity: 0, y: 24 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }
-                }
-                transition={{ delay: i * 0.12, duration: 0.6 }}
-                className="relative pl-6 border-l-2 border-border"
-              >
-                <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-primary border-2 border-background" />
-                <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1 mb-3">
-                  <h3 className="text-lg font-bold text-foreground">
-                    {item.role}
-                    <span className="text-muted-foreground font-medium">
-                      , {item.company}
-                    </span>
-                  </h3>
-                  <span className="text-sm text-muted-foreground">
-                    {item.period}
+        <div className="border-l border-border pl-8 space-y-12">
+          {EXPERIENCE.map((item, i) => (
+            <Reveal key={item.company + item.period} y={30} delay={Math.min(i * 0.08, 0.24)}>
+              <article className="relative">
+              <span className="absolute -left-[33px] top-1.5 block h-2 w-2 rounded-full bg-primary ring-4 ring-card" />
+              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2">
+                <h3 className="text-lg font-bold text-foreground">
+                  {item.role}
+                  <span className="text-muted-foreground font-medium">
+                    , {item.company}
                   </span>
-                </div>
-                <div className="text-sm text-muted-foreground mb-4">
-                  {item.location}
-                </div>
-                <ul className="space-y-3">
-                  {item.bullets.map((b, j) => (
-                    <li
-                      key={j}
-                      className="flex gap-3 text-sm text-muted-foreground leading-relaxed"
+                </h3>
+                <span className="text-sm text-muted-foreground">
+                  {item.period}
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground mt-1">
+                {item.location}
+              </p>
+              {item.summary && (
+                <p className="text-sm text-foreground/80 mt-4 leading-relaxed max-w-3xl">
+                  {item.summary}
+                </p>
+              )}
+              {item.highlights.length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {item.highlights.map((h) => (
+                    <span
+                      key={h}
+                      className="rounded-full border border-primary/25 bg-primary/5 px-3 py-1 text-xs text-primary"
                     >
-                      <span className="mt-2 h-1 w-4 shrink-0 rounded-full bg-primary/50" />
-                      <span>{b}</span>
-                    </li>
+                      {h}
+                    </span>
                   ))}
-                </ul>
-                {item.stack.length > 0 && (
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {item.stack.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-md border border-border px-2.5 py-1 text-xs text-muted-foreground"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </motion.article>
+                </div>
+              )}
+              {item.stack.length > 0 && (
+                <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs text-muted-foreground">
+                  {item.stack.map((t) => (
+                    <span key={t} className="flex items-center gap-1.5">
+                      <span className="h-1 w-1 rounded-full bg-primary/60" />
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-20">
+          <h3 className="text-xl font-bold text-foreground mb-8">Education</h3>
+          <div className="grid md:grid-cols-3 gap-5">
+            {EDUCATION.map((item, i) => (
+              <Reveal key={item.company} y={20} delay={i * 0.08}>
+                <div className="rounded-xl border border-border bg-background p-6 flex flex-col min-h-[150px]">
+                <span className="text-xs text-muted-foreground">
+                  {item.period}
+                </span>
+                <p className="font-bold text-foreground mt-2 leading-snug">
+                  {item.role}
+                </p>
+                <p className="text-sm text-muted-foreground mt-auto pt-4">
+                  {item.company}
+                </p>
+                </div>
+              </Reveal>
             ))}
           </div>
-        )}
-
-        {!isInView ? null : (
-          <div className="mt-20">
-            <h3 className="text-xl font-bold text-foreground mb-8">Education</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {EDUCATION.map((item, i) => (
-                <motion.div
-                  key={item.company}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                  }
-                  transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
-                  className="rounded-xl border border-border bg-background p-6"
-                >
-                  <div className="text-sm text-muted-foreground">
-                    {item.period}
-                  </div>
-                  <div className="font-bold text-foreground mt-1">
-                    {item.role}
-                  </div>
-                  <div className="text-sm text-muted-foreground mt-1">
-                    {item.company}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        )}
+        </div>
       </div>
     </section>
   );

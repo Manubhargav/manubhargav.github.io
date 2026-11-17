@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Manu Bhargav Srirangarajan — Senior Software Engineer",
+  title: "Manu Srirangarajan — Senior Software Engineer",
   description:
-    "Portfolio of Manu Bhargav Srirangarajan, Senior Software Engineer at Amazon. React frontend and Python REST APIs.",
+    "Portfolio of Manu Srirangarajan, Senior Software Engineer at Amazon. React frontend and Python REST APIs.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Manu Bhargav Srirangarajan — Senior Software Engineer",
+    title: "Manu Srirangarajan — Senior Software Engineer",
     description: "Personal portfolio showcasing projects, skills, and experience.",
     type: "website",
   },

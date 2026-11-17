@@ -65,7 +65,7 @@ export function Nav() {
                 "text-[11px] tracking-wide whitespace-nowrap transition-all duration-300",
                 isActive
                   ? "text-primary font-semibold opacity-100"
-                  : "text-muted-foreground opacity-40 group-hover:opacity-90"
+                  : "text-muted-foreground opacity-60 group-hover:opacity-100"
               )}
             >
               {s.label}

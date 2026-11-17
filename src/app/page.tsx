@@ -10,7 +10,7 @@ import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
   return (
-    <main className="flex-1 relative overflow-hidden lg:pl-20 pb-14 lg:pb-0">
+    <main className="flex-1 relative overflow-hidden pb-14">
       <Nav />
       <MobileNav />
       <Hero />
