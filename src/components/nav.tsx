@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 
 const SECTIONS = [
   { id: "intro", label: "Intro" },
@@ -46,11 +47,13 @@ export function Nav() {
       {SECTIONS.map((s) => {
         const isActive = active === s.id;
         return (
-          <a
+          <motion.a
             key={s.id}
             href={`#${s.id}`}
             aria-current={isActive ? "true" : undefined}
             className="group flex items-center gap-2.5 py-1.5"
+            whileHover={{ backgroundColor: "primary/10", borderColor: "primary" }}
+            transition={{ type: "spring", stiffness: 300, damping: 22 }}
           >
             <span
               className={cn(
@@ -70,7 +73,7 @@ export function Nav() {
             >
               {s.label}
             </span>
-          </a>
+          </motion.a>
         );
       })}
     </nav>

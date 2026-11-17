@@ -7,7 +7,7 @@ export function Marquee() {
 
   return (
     <section
-      aria-label="Companies and institutions I have worked with"
+      id="marquee" aria-label="Companies and institutions I have worked with"
       className="border-y border-border bg-card/40 py-10 overflow-hidden"
     >
       <div className="mb-7 text-center">
@@ -21,7 +21,9 @@ export function Marquee() {
             key={i}
             src={`/brands/${item.icon}.png`}
             alt={item.label}
-            className="h-7 w-auto max-w-[150px] shrink-0 object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+            className="h-7 w-auto max-w-[160px] shrink-0 object-contain opacity-45 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 hover:scale-105 p-2"
+            loading="lazy"
+            decoding="async"
           />
         ))}
       </div>

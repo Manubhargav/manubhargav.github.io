@@ -108,6 +108,7 @@ export const PROJECTS = [
     repo: "https://github.com/Manubhargav/NammaMetroMap",
     shots: [
       { src: "/projects/namma-metro-map.png", caption: "Interactive metro map" },
+      { src: "/projects/namma-metro-map.png", caption: "Metro lines and stations" },
     ],
   },
 ] as const;

@@ -1,13 +1,10 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 
 export function Contact() {
   return (
-    <section
-      id="contact"
-      className="px-6 py-24 bg-card border-t border-border"
-    >
+    <section id="contact" className="px-6 py-24 bg-card border-t border-border">
       <div className="max-w-2xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -53,7 +50,7 @@ export function Contact() {
               name="name"
               type="text"
               required
-              className="w-full rounded-md border border-border bg-background px-4 py-2 text-foreground focus:border-primary focus:outline-none transition-colors"
+              className="w-full rounded-md border border-border bg-background px-4 py-2 text-foreground focus:border-primary focus:outline-none transition-colors hover:bg-primary/5"
               placeholder="Jane Doe"
             />
           </div>
@@ -70,7 +67,7 @@ export function Contact() {
               name="email"
               type="email"
               required
-              className="w-full rounded-md border border-border bg-background px-4 py-2 text-foreground focus:border-primary focus:outline-none transition-colors"
+              className="w-full rounded-md border border-border bg-background px-4 py-2 text-foreground focus:border-primary focus:outline-none transition-colors hover:bg-primary/5"
               placeholder="jane@example.com"
             />
           </div>
@@ -87,14 +84,14 @@ export function Contact() {
               name="message"
               required
               rows={4}
-              className="w-full rounded-md border border-border bg-background px-4 py-2 text-foreground focus:border-primary focus:outline-none transition-colors"
+              className="w-full rounded-md border border-border bg-background px-4 py-2 text-foreground focus:border-primary focus:outline-none transition-colors hover:bg-primary/5"
               placeholder="Tell me about your project or role..."
             />
           </div>
 
           <button
             type="submit"
-            className="w-full rounded-md bg-primary px-6 py-3 text-accent-foreground font-medium hover:bg-primary-hover transition-colors"
+            className="w-full rounded-md bg-primary px-6 py-3 text-accent-foreground font-medium hover:bg-primary-hover hover:scale-[1.02] transition-all duration-300"
           >
             Send Message
           </button>

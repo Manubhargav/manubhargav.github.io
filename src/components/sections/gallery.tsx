@@ -1,70 +1,85 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
+import { motion, useInView } from "motion/react";
 import { GALLERY } from "@/lib/data";
 import { ProjectImage } from "@/components/ui/project-image";
 
-function useDesktop() {
-  const [desktop, setDesktop] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
-    const update = () => setDesktop(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
-  return desktop;
-}
-
 export function Gallery() {
-  const ref = useRef<HTMLElement>(null);
-  const desktop = useDesktop();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
-  const shift = useTransform(scrollYProgress, [0, 1], ["0%", "-46%"]);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const layout = [
+    { col: 1, row: 1, rows: 3, className: "aspect-[3/4] hover:scale-105" },
+    { col: 2, row: 1, rows: 2, className: "aspect-square hover:scale-105" },
+    { col: 4, row: 1, rows: 3, className: "aspect-[3/4] hover:scale-105" },
+    { col: 1, row: 4, rows: 2, className: "aspect-square hover:scale-105" },
+    { col: 2, row: 3, rows: 2, className: "aspect-[3/4] hover:scale-105" },
+    { col: 4, row: 4, rows: 2, className: "aspect-square hover:scale-105" },
+    { col: 1, row: 6, rows: 2, className: "aspect-[3/4] hover:scale-105" },
+    { col: 2, row: 5, rows: 2, className: "aspect-square hover:scale-105" },
+  ];
 
   return (
     <section
       ref={ref}
       id="gallery"
-      className={`relative ${desktop ? "h-[85vh]" : "py-20"}`}
+      className="relative px-6 py-24 overflow-hidden"
     >
-      <div
-        className={
-          desktop
-            ? "sticky top-0 h-screen flex flex-col justify-center overflow-hidden"
-            : ""
-        }
-      >
-        <div className="max-w-6xl mx-auto px-6 mb-8 w-full">
-          <h2 className="text-3xl font-bold text-foreground">Moments</h2>
+      <div className="max-w-6xl mx-auto mb-16">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.7 }}
+          className="text-3xl font-bold text-foreground"
+        >
+          Moments
+        </motion.h2>
+      </div>
+
+      <div className="relative max-w-6xl mx-auto grid-cols-4 gap-4">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <div
+              key={i}
+              className="absolute -top-1/2 left-0 right-0 h-[200%] border-t-2 border-border/20 rounded-full rotate-3 -z-10"
+              style={{
+                transform: `rotate(${i * 6}deg) scale(${1 + i * 0.05})`,
+              }}
+            />
+          ))}
         </div>
 
-        <div
-          className={`no-scrollbar overflow-x-auto md:overflow-visible w-full ${
-            desktop ? "" : "px-6"
-          }`}
-        >
-          <motion.div
-            style={desktop ? { x: shift } : undefined}
-            className="flex w-max items-start gap-5 px-6"
-          >
-            {GALLERY.map((item) => (
-              <figure key={item.id} className="w-56 shrink-0 md:w-72">
-                <ProjectImage
-                  src={item.src}
-                  alt={item.caption}
-                  className={item.tall ? "aspect-[3/4]" : "aspect-square md:mt-12"}
-                />
-                <figcaption className="mt-3 text-xs text-muted-foreground">
-                  {item.caption}
+        <div className="relative z-10 grid grid-cols-4 gap-4">
+          {layout.map((pos, i) => {
+            const item = GALLERY[i % GALLERY.length];
+            return (
+              <motion.figure
+                key={item.id}
+                style={{
+                  gridColumnStart: pos.col,
+                  gridRowStart: pos.row,
+                  gridRowEnd: pos.rows,
+                }}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: i * 0.05 }}
+                className={`group ${pos.className}`}
+              >
+                <div className="relative rounded-lg overflow-hidden aspect-[3/4] bg-card">
+                  <ProjectImage
+                    src={item.src}
+                    alt={item.caption}
+                    className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <figcaption className="mt-2 flex items-center justify-between text-xs uppercase tracking-wide text-muted-foreground">
+                  <span className="text-primary/70">{item.caption}</span>
                 </figcaption>
-              </figure>
-            ))}
-          </motion.div>
+              </motion.figure>
+            );
+          })}
         </div>
       </div>
     </section>

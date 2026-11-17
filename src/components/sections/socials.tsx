@@ -1,19 +1,40 @@
 "use client";
 
 import { useRef } from "react";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { SOCIALS } from "@/lib/data";
 
-const ICONS: Record<string, string> = {
-  github: "github",
-  linkedin: "linkedin",
-  instagram: "instagram",
-  x: "x",
-  medium: "medium",
+const ICONS: Record<string, React.ReactNode> = {
+  github: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C-4.422 18.07-3.933 17.7-3.933 17.7c-.692-.476-.084-.476-.084-.476 1.485.222 2.273 1.532 2.273 1.532 1.421 2.272 3.458 1.617 4.299 1.237.284-.878.959-1.479 1.698-1.733-5.271-.605-10.414-2.636-10.414-11.595 0-2.56.915-4.655 2.438-6.303-.243-.595-1.058-2.003-.146-3.974 0 0 1.993-.638 6.528 2.435 1.896-.512 3.942-.772 5.965-.772 2.024 0 4.084.26 5.966.772 4.535-3.073 6.528-2.435 6.528-2.435.913 1.971.097 3.379-.146 3.974 1.524 1.648 2.438 3.743 2.438 6.303 0 9.177-5.147 10.99-10.491 11.574.839.725 1.571 1.678 1.571 3.493 0 2.525-.027 4.567-.027 5.184 0 .318.225.695.825.577C17.562 21.8 21 17.298 21 12c0-6.627-5.373-12-12-12z" />
+    </svg>
+  ),
+  linkedin: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268H14.5v-9.364c0-1.332-.027-3.037-1.982-3.037-1.983 0-2.257 1.68-2.257 3.037v9.364h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v10.765zM20 2h-4c-1.1 0-2 .9-2 2v4c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V4c0-1.1-.9-2-2-2H4c-2.21 0-4 1.79-4 4v12c0 2.21 1.79 4 4 4h16c2.21 0 4-1.79 4-4V6c0-2.21-1.79-4-4-4z" />
+    </svg>
+  ),
+  instagram: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2.163c3.204 0 3.584-.012 4.85.075 3.25.22 4.77.868 4.991 2.949.206 1.961.028 3.868-.669 5.457-.631 1.435-1.71 2.502-3.31 3.07-1.931.683-4.021.457-5.861-.293-2.24-.91-3.271-2.56-3.317-3.96-.024-.66-.035-1.292-.026-1.886.01-.742.035-1.177.17-1.392.535-.855 1.572-1.296 3.049-1.562 2.205-.402 5.394.168 6.105.113m-.002 1.487c-.658.054-1.518.165-2.361.314-1.34.235-2.779.691-3.794 1.455-1.244.934-2.167 2.01-2.534 3.35-.376 1.38-.427 3.17-.13 4.977.245 1.487.848 2.454 1.71 3.43 1.051 1.191 2.506 1.987 4.274 2.234 1.747.244 3.506.182 4.424-.082 1.092-.313 1.842-1.242 2.298-2.687.516-1.617.586-3.38.208-4.976-.393-1.666-1.54-3.086-3.228-3.919-1.687-.83-3.704-1.406-5.198-1.584-.737-.088-1.702-.27-2.399-.394m-2.918 10.725c0 1.615-1.32 2.94-2.94 2.94-1.616 0-2.94-1.325-2.94-2.94s1.324-2.94 2.94-2.94 2.94 1.325 2.94 2.94m4.811-10.078c-.218.751-.592 1.38-1.152 1.89-.559.511-1.325.925-2.193 1.1-.868.175-1.815.19-2.699-.007-.885-.198-1.626-.585-2.137-1.07-.511-.485-.898-1.03-1.073-1.687-.175-.658-.116-1.527-.006-2.177.128-.763.435-1.384 1.002-1.826.57-.443 1.344-.768 2.21-.878.868-.109 1.873.006 2.627.172.755.167 1.425.562 1.968 1.033.542.473.913 1.02 1.054 1.721.133.68.074 1.646-.184 2.642z" />
+    </svg>
+  ),
+  x: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.71 6.88H1.25l7.731 8.841L1.245 2.25h6.316l4.72 6.236L18.244 2.25zM6.907 4.127h1.828l-2.368 3.38h1.361l2.602-3.38h1.826l-5.431 7.257zm3.92 13.405-2.67-3.552h1.532l2.669 3.552zm5.363-8.317c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764c.965 0 1.75.79 1.75 1.764 0 .974-.784 1.764-1.75 1.764" />
+    </svg>
+  ),
+  medium: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C-4.422 18.07-3.933 17.7-3.933 17.7c-.692-.476-.084-.476-.084-.476 1.485.222 2.273 1.532 2.273 1.532 1.421 2.272 3.458 1.617 4.299 1.237.284-.878.959-1.479 1.698-1.733-5.271-.605-10.414-2.636-10.414-11.595 0-2.56.915-4.655 2.438-6.303-.243-.595-1.058-2.003-.146-3.974 0 0 1.993-.638 6.528 2.435 1.896-.512 3.942-.772 5.965-.772 2.024 0 4.084.26 5.966.772 4.535-3.073 6.528-2.435 6.528-2.435.913 1.971.097 3.379-.146 3.974 1.524 1.648 2.438 3.743 2.438 6.303 0 9.177-5.147 10.99-10.491 11.574.839.725 1.571 1.678 1.571 3.493 0 2.525-.027 4.567-.027 5.184 0 .318.225.695.825.577C17.562 21.8 21 17.298 21 12c0-6.627-5.373-12-12-12z" />
+    </svg>
+  ),
 };
 
 export function Socials() {
   const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section ref={ref} id="socials" className="px-6 py-24 relative overflow-hidden">
@@ -28,7 +49,6 @@ export function Socials() {
           <h2 className="text-3xl font-bold text-foreground">Socials</h2>
         </motion.div>
 
-        {/* 12-column brick: three across on top, two centered beneath */}
         <div className="grid grid-cols-2 md:grid-cols-12 gap-5">
           {SOCIALS.map((social, i) => (
             <motion.a
@@ -40,38 +60,23 @@ export function Socials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
-              whileHover={{ y: -4 }}
-              className={`flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4 hover:border-primary hover:bg-card-hover transition-colors ${
-                i < 3
-                  ? "col-span-2 md:col-span-4"
-                  : i === 3
-                  ? "col-span-1 md:col-span-4 md:col-start-3"
-                  : "col-span-1 md:col-span-4"
+              whileHover={{ y: -4, scale: 1.02 }}
+              className={`flex items-center gap-3 rounded-xl border border-border bg-card px-5 py-4 hover:bg-card-hover hover:border-primary transition-all duration-300 ${
+                i < 3 ? "col-span-2 md:col-span-4" : i === 3 ? "col-span-1 md:col-span-4 md:col-start-3" : "col-span-1 md:col-span-4"
               }`}
             >
               <span className="shrink-0 text-primary">
-                {ICONS[social.icon] ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={`/brands/${ICONS[social.icon]}.svg`}
-                    alt=""
-                    className="h-5 w-5 object-contain"
-                  />
-                ) : (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z" />
-                  </svg>
-                )}
+                {ICONS[social.icon]}
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block font-medium text-foreground">
+                <span className="block font-medium text-foreground group-hover:text-primary transition-colors duration-300">
                   {social.label}
                 </span>
                 <span className="block truncate text-xs text-muted-foreground">
                   {social.handle}
                 </span>
               </span>
-              <span className="text-muted-foreground">→</span>
+              <span className="text-muted-foreground group-hover:text-primary transition-colors duration-300">→</span>
             </motion.a>
           ))}
         </div>
